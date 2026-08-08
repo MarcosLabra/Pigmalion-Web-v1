@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@theme {
+  --font-heading: 'EB Garamond', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  --color-surface-background: #F7F6F2;
+  --color-surface-secondary: #566573;
+  --color-surface-black: #111111;
+
+  --color-interactive-purple: #754595;
+  --color-interactive-yellow: #FFD700;
+  --color-interactive-dark: #1B2631;
+
+  --color-text-primary: #1B2631;
+  --color-text-secondary: #566573;
+  --color-text-light: #F7F6F2;
+
+  --background-image-gradient-hero: linear-gradient(117deg, #111111 0%, #1B2631 54.79%, #566573 100%);
+}

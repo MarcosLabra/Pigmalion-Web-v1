@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pigmalión</title>
+  </head>
+
+  <body class="bg-surface-background font-body text-text-primary">
+    <!-- Header & Navegación Mobile First -->
+    <header class="absolute top-0 left-0 w-full z-50 px-6 py-4">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2">
+          <!-- La imagen del logo -->
+          <img
+            src="/src/assets/Light-Logo.svg"
+            alt="Pigmalión - Consultoría estratégica e ingeniería digital"
+            class="h-10 w-auto object-contain"
+          />
+
+          <!-- Texto oculto visualmente pero indexable para SEO -->
+          <h1 class="sr-only">
+            Pigmalión: Consultoría estratégica e ingeniería digital
+          </h1>
+        </a>
+
+        <!-- Botón Menú Hamburguesa (Trigger) -->
+        <button
+          id="menu-btn"
+          aria-label="Abrir menú"
+          class="text-text-light focus:outline-none md:hidden"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menú Desplegable Mobile (Con Glassmorphism restaurado y duplicados eliminados) -->
+      <div
+        id="mobile-menu"
+        class="hidden absolute top-full left-0 w-full bg-interactive-dark/40 backdrop-blur-md px-6 py-6 border-t border-text-light/10 shadow-2xl md:hidden"
+      >
+        <nav class="flex flex-col gap-4 text-center">
+          <a
+            href="#servicios"
+            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors"
+            >Servicios</a
+          >
+          <a
+            href="#sobre-nosotros"
+            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors"
+            >Sobre nosotros</a
+          >
+          <a
+            href="#contacto"
+            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors"
+            >Contacto</a
+          >
+        </nav>
+      </div>
+
+      <!-- Línea inferior con gradiente de opacidad (0 a 0.1) -->
+      <div
+        class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-white/0 to-white/10 pointer-events-none"
+      ></div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="relative flex flex-col items-center justify-center min-h-screen px-6 py-16 text-center bg-gradient-hero overflow-hidden"
+    >
+      <div
+        class="relative z-10 flex flex-col items-center w-full max-w-xl mx-auto mt-16"
+      >
+        <h2
+          class="font-heading text-4xl sm:text-4xl lg:text-5xl font-extrabold text-text-light leading-[1.15] tracking-normal mb-12"
+        >
+          Esculpiendo el <br class="sm:hidden" />
+          futuro de la <br />
+          <span
+            class="text-interactive-yellow uppercase block mt-1 text-[1.4em]"
+            >Pedagogía</span
+          >
+          a través de la <br />
+          <span
+            class="text-interactive-yellow uppercase block mt-1 text-[1.4em]"
+            >Tecnología</span
+          >
+        </h2>
+
+        <p
+          class="font-body text-base sm:text-lg text-text-light/90 leading-relaxed max-w-md mb-8"
+        >
+          Consultoría estratégica e ingeniería digital para instituciones
+          educativas. Transformamos la complejidad algorítmica en herramientas
+          con sentido humano.
+        </p>
+
+        <a
+          href="#propuestas"
+          class="w-full max-w-sm py-4 px-6 bg-interactive-yellow text-interactive-dark font-body font-bold text-base rounded shadow-lg hover:opacity-95 transition-opacity flex items-center justify-center"
+        >
+          Conocé nuestras propuestas
+        </a>
+      </div>
+    </section>
+    <!-- Script principal de Vite -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
