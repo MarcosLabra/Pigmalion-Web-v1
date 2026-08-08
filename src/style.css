@@ -18,5 +18,5 @@
   --color-text-secondary: #566573;
   --color-text-light: #F7F6F2;
 
-  --background-image-gradient-hero: linear-gradient(117deg, #111111 0%, #1B2631 54.79%, #566573 100%);
+  --background-image-gradient-hero: linear-gradient(0deg, #111111 0%, #1B2631 54.79%, #566573 100%);
 }
