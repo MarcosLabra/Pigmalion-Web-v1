@@ -8,8 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>Pigmalión</title>
-    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-C0XjTtZb.js"></script>
-    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-Czypks68.css">
+    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-Ce1gWTaR.js"></script>
+    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-UzW3ahp7.css">
   </head>
 
   <body class="bg-surface-background font-body text-text-primary">
@@ -30,36 +30,50 @@
         </a>
 
         <!-- Menú de Navegación Desktop -->
-        <nav class="hidden md:flex items-center gap-8">
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8">
           <a
             href="#servicios"
-            class="text-text-light hover:text-interactive-yellow transition-colors font-medium"
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium text-sm lg:text-base"
             >Servicios</a
           >
           <a
+            href="#propuestas"
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium text-sm lg:text-base"
+            >Propuestas</a
+          >
+          <a
             href="#sobre-nosotros"
-            class="text-text-light hover:text-interactive-yellow transition-colors font-medium"
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium text-sm lg:text-base"
             >Sobre nosotros</a
           >
           <a
+            href="#experiencias"
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium text-sm lg:text-base"
+            >Experiencias</a
+          >
+          <a
             href="#contacto"
-            class="text-text-light hover:text-interactive-yellow transition-colors font-medium"
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium text-sm lg:text-base"
             >Contacto</a
           >
           <a
             href="https://instagram.com/tu-usuario"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-text-light hover:text-interactive-yellow transition-colors font-medium"
-            >Instagram</a
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium text-sm lg:text-base"
+            aria-label="Instagram"
           >
+            <i class="fa-brands fa-instagram text-xl"></i>
+          </a>
           <a
             href="https://wa.me/tu-numero"
             target="_blank"
             rel="noopener noreferrer"
-            class="bg-interactive-yellow text-interactive-dark px-4 py-2 rounded font-bold hover:opacity-95 transition-opacity"
-            >WhatsApp</a
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium text-sm lg:text-base"
+            aria-label="WhatsApp"
           >
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+          </a>
         </nav>
 
         <!-- Botón Menú Hamburguesa Animado -->
@@ -83,30 +97,39 @@
       <!-- Menú Desplegable Mobile -->
       <div
         id="mobile-menu"
-        class="mobile-menu-closed absolute top-full left-0 w-full bg-interactive-dark/90 backdrop-blur-md px-6 py-6 border-b border-text-light/10 shadow-2xl md:hidden"
+        class="mobile-menu-closed absolute top-full left-0 w-full bg-interactive-dark/95 backdrop-blur-md px-6 py-6 border-b border-text-light/10 shadow-2xl md:hidden"
       >
         <nav class="flex flex-col gap-4 text-center">
           <a
             href="#servicios"
-            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors"
+            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors font-medium"
             >Servicios</a
           >
           <a
+            href="#propuestas"
+            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors font-medium"
+            >Propuestas</a
+          >
+          <a
             href="#sobre-nosotros"
-            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors"
+            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors font-medium"
             >Sobre nosotros</a
           >
           <a
+            href="#experiencias"
+            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors font-medium"
+            >Experiencias</a
+          >
+          <a
             href="#contacto"
-            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors"
+            class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors font-medium"
             >Contacto</a
           >
 
-          <!-- Fila de Iconos de Font Awesome -->
+          <!-- Fila de Iconos de Font Awesome en Mobile -->
           <div
             class="flex items-center justify-center gap-6 pt-4 border-t border-text-light/10 mt-2"
           >
-            <!-- Instagram -->
             <a
               href="https://instagram.com/tu-usuario"
               target="_blank"
@@ -116,8 +139,6 @@
             >
               <i class="fa-brands fa-instagram text-2xl"></i>
             </a>
-
-            <!-- WhatsApp -->
             <a
               href="https://wa.me/tu-numero"
               target="_blank"
@@ -133,7 +154,7 @@
 
       <!-- Línea inferior con gradiente de opacidad -->
       <div
-        class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-white/0 to-white/10 pointer-events-none"
+        class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none"
       ></div>
     </header>
     <!-- Hero Section -->
