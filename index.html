@@ -8,8 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>Pigmalión</title>
-    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-BDPmiNI8.js"></script>
-    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-Dolvrjjy.css">
+    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-BPJKxKRq.js"></script>
+    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-BQFj43kA.css">
   </head>
 
   <body class="bg-surface-background font-body text-text-primary">
@@ -271,10 +271,7 @@
       </div>
     </section>
     <!-- Sección Filosofía / Propuesta -->
-    <section
-      id="sobre-nosotros"
-      class="relative bg-surface-black py-6 px-6 overflow-hidden"
-    >
+    <section class="relative bg-surface-black py-6 px-6 overflow-hidden">
       <div class="max-w-4xl mx-auto flex flex-col items-center">
         <!-- Bloque de Cita con Comillas Centradas y Letras Separadas -->
         <div class="relative max-w-xl mx-auto text-center py-6 px-4 mb-16">
@@ -439,6 +436,236 @@
             </p>
           </div>
         </div>
+      </div>
+    </section>
+    <!-- Sección Propuestas Formativas -->
+    <section
+      id="propuestas"
+      class="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-surface-secondary via-interactive-dark to-surface-black text-text-light"
+    >
+      <div class="max-w-4xl mx-auto flex flex-col items-center">
+        <!-- Título de la Sección -->
+        <div class="w-full text-left mb-10">
+          <h2
+            class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-text-light"
+          >
+            Propuestas formativas
+          </h2>
+        </div>
+
+        <!-- Filtros interactivos (2 por línea) -->
+        <div
+          class="w-full flex flex-col gap-6 mb-12 max-w-lg mx-auto sm:max-w-none"
+        >
+          <!-- Grupo 1: Audiencia -->
+          <div
+            class="grid grid-cols-2 sm:flex sm:flex-wrap justify-start gap-3"
+            id="filter-audience"
+          >
+            <button
+              data-filter="docentes"
+              class="filter-btn-audience active w-full sm:w-[150px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-purple shadow-md text-text-light border-transparent text-center"
+            >
+              Docentes
+            </button>
+            <button
+              data-filter="familias"
+              class="filter-btn-audience active w-full sm:w-[150px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-purple shadow-md text-text-light border-transparent text-center"
+            >
+              Familias
+            </button>
+          </div>
+
+          <!-- Grupo 2: Niveles -->
+          <div
+            class="grid grid-cols-2 sm:flex sm:flex-wrap justify-start gap-3"
+            id="filter-level"
+          >
+            <button
+              data-filter="inicial"
+              class="filter-btn-level active w-full sm:w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+            >
+              Inicial
+            </button>
+            <button
+              data-filter="primaria"
+              class="filter-btn-level active w-full sm:w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+            >
+              Primaria
+            </button>
+            <button
+              data-filter="secundaria"
+              class="filter-btn-level active w-full sm:w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+            >
+              Secundaria
+            </button>
+            <button
+              data-filter="superior"
+              class="filter-btn-level active w-full sm:w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+            >
+              Superior
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenedor Dinámico de Tarjetas -->
+        <div id="cards-container" class="w-full flex flex-col gap-8 mb-12">
+          <!-- Tarjeta 1 -->
+          <div
+            class="proposal-card bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 shadow-2xl transition-all duration-300"
+            data-audience="familias"
+            data-level="secundaria"
+          >
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="bg-interactive-yellow text-surface-black text-xs font-bold px-3 py-1 rounded-full"
+                >Secundaria</span
+              >
+              <span
+                class="bg-interactive-purple text-text-light text-xs font-bold px-3 py-1 rounded-full"
+                >Familias</span
+              >
+            </div>
+
+            <h3
+              class="font-heading text-2xl sm:text-3xl font-bold text-center mb-6 text-surface-black"
+            >
+              "Pantallas en la Infancia: El Diseño del Entorno Digital Familiar"
+            </h3>
+
+            <p
+              class="font-body text-text-secondary text-base mb-6 leading-relaxed"
+            >
+              Un taller de orientación para familias sobre el impacto del uso de
+              dispositivos en el desarrollo infantil (3 a 5 años). A través de
+              evidencia en neurociencia, pediatría y pautas de crianza,
+              abordaremos:
+            </p>
+
+            <ul
+              class="list-disc list-inside space-y-2 text-text-secondary text-sm sm:text-base mb-8"
+            >
+              <li>
+                <strong>Salud y Neurodesarrollo:</strong> Sueño,
+                autorregulación, circuito de dopamina y movimiento.
+              </li>
+              <li>
+                <strong>El Rol del Adulto:</strong> Co-visión, prevención de la
+                tecnoferencia y cómo gestionar berrinches sin la "niñera
+                digital".
+              </li>
+              <li>
+                <strong>Plan Familiar de Tecnología:</strong> Creación de zonas
+                libres de pantallas, rutinas saludables y pautas de mediación.
+              </li>
+              <li>
+                <strong>Espacio de Debate:</strong> Intercambio abierto para
+                resolver dudas y construir criterios de cuidado en el hogar.
+              </li>
+            </ul>
+
+            <div
+              class="border-t border-text-secondary/20 pt-6 space-y-2 text-sm sm:text-base text-text-secondary"
+            >
+              <p><strong>Duracion:</strong> 1 encuentro de 2hs</p>
+              <p><strong>Modalidad:</strong> Virtual o presencial</p>
+              <p>
+                <strong>Entregable:</strong> Guía con propuestas para seguir
+                trabajando lo visto en el taller
+              </p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div
+            class="proposal-card bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 shadow-2xl transition-all duration-300"
+            data-audience="docentes"
+            data-level="inicial primaria secundaria superior"
+          >
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="bg-interactive-yellow text-surface-black text-xs font-bold px-3 py-1 rounded-full"
+                >Todos los niveles</span
+              >
+              <span
+                class="bg-interactive-purple text-text-light text-xs font-bold px-3 py-1 rounded-full"
+                >Docentes</span
+              >
+            </div>
+
+            <h3
+              class="font-heading text-2xl sm:text-3xl font-bold text-center mb-6 text-surface-black"
+            >
+              "Ingeniería de Prompts y Asistentes de IA para la Práctica
+              Docente"
+            </h3>
+
+            <p
+              class="font-body text-text-secondary text-base mb-6 leading-relaxed"
+            >
+              Un programa de formación intensivo para docentes enfocado en la
+              adopción crítica y técnica de la Inteligencia Artificial en la
+              planificación y gestión de aula. A través de un enfoque práctico y
+              personalizado, trabajaremos:
+            </p>
+
+            <ul
+              class="list-disc list-inside space-y-2 text-text-secondary text-sm sm:text-base mb-8"
+            >
+              <li>
+                <strong>Ingeniería de Prompts Aplicada:</strong> Estructuración
+                de instrucciones efectivas y criterios de curaduría pedagógica
+                para evitar alucinaciones.
+              </li>
+              <li>
+                <strong>Personalización de Asistentes:</strong> Configuración de
+                la interfaz de Gemini adaptada al perfil, nivel y materia de
+                cada educador.
+              </li>
+              <li>
+                <strong>Arquitectura RAG Institucional:</strong> Carga y
+                estructuración de documentos curriculares (NAP, diseños de
+                provincia) para consultas sobre fuentes propias.
+              </li>
+              <li>
+                <strong>Flujos de Trabajo Eficientes:</strong> Automatización de
+                secuencias didácticas, instrumentos de evaluación y diseño de
+                recursos educativos.
+              </li>
+            </ul>
+
+            <div
+              class="border-t border-text-secondary/20 pt-6 space-y-2 text-sm sm:text-base text-text-secondary"
+            >
+              <p><strong>Duracion:</strong> 3 encuentro de 2hs</p>
+              <p><strong>Modalidad:</strong> Virtual o presencial</p>
+              <p>
+                <strong>Entregable:</strong> Repositorio RAG configurado y
+                personalizado + Asistente Gemini adaptado a la práctica docente
+                de cada participante
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner inferior y Botón CTA -->
+        <div
+          class="w-full bg-interactive-dark/60 backdrop-blur-md border border-text-light/10 rounded-2xl p-6 text-center mb-6"
+        >
+          <p class="font-body text-text-light text-sm sm:text-base">
+            ¿No encontras lo que buscas? Diseñemos juntos una
+            <strong class="text-interactive-yellow"
+              >propuesta a tu medida</strong
+            >
+          </p>
+        </div>
+
+        <a
+          href="#contacto"
+          class="w-full max-w-md py-4 px-8 bg-interactive-yellow text-surface-black font-body font-bold text-base rounded-xl text-center hover:opacity-95 transition-all duration-300 shadow-lg"
+        >
+          Contactanos para empezar
+        </a>
       </div>
     </section>
     <!-- Footer Section -->
