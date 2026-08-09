@@ -8,8 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>Pigmalión</title>
-    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-CY_nb5_Z.js"></script>
-    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-B7buSiAg.css">
+    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-DTttAHvB.js"></script>
+    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-CX6SYE5b.css">
   </head>
 
   <body class="bg-surface-background font-body text-text-primary">
@@ -260,23 +260,34 @@
         class="relative z-10 flex flex-col items-center w-full max-w-xl mx-auto"
       >
         <h2
-          class="font-heading text-4xl sm:text-4xl lg:text-5xl font-extrabold text-text-light leading-[1.15] tracking-normal mb-12"
+          class="font-heading text-4xl sm:text-4xl lg:text-5xl font-extrabold text-text-light leading-[1.15] tracking-normal mb-12 min-h-[220px] flex flex-col items-center justify-center"
         >
-          Esculpiendo el <br class="sm:hidden" />
-          futuro de la <br />
+          <!-- Bloque 1: Tipeo inicial -->
+          <span id="typed-text-1" class="inline-block"></span>
+
+          <!-- Palabra 1: Pedagogía (Empieza apagada) -->
           <span
-            class="text-interactive-yellow uppercase block mt-1 text-[1.4em]"
-            >Pedagogía</span
+            id="glow-word-1"
+            class="text-interactive-yellow uppercase block mt-1 text-[1.4em] opacity-0 transition-all duration-1000"
           >
-          a través de la <br />
+            Pedagogía
+          </span>
+
+          <!-- Bloque 2: Tipeo intermedio -->
+          <span id="typed-text-2" class="inline-block mt-2"></span>
+
+          <!-- Palabra 2: Tecnología (Empieza apagada) -->
           <span
-            class="text-interactive-yellow uppercase block mt-1 text-[1.4em]"
-            >Tecnología</span
+            id="glow-word-2"
+            class="text-interactive-yellow uppercase block mt-1 text-[1.4em] opacity-0 transition-all duration-1000"
           >
+            Tecnología
+          </span>
         </h2>
 
         <p
-          class="font-body text-base sm:text-lg text-text-light/90 leading-relaxed max-w-md mb-16"
+          id="hero-fade-content"
+          class="font-body text-base sm:text-lg text-text-light/90 leading-relaxed max-w-md mb-16 opacity-0 transition-opacity duration-1000"
         >
           Consultoría estratégica e ingeniería digital para instituciones
           educativas. Transformamos la complejidad algorítmica en herramientas
@@ -284,8 +295,9 @@
         </p>
 
         <a
+          id="hero-cta"
           href="#propuestas"
-          class="w-full max-w-sm py-4 px-6 bg-interactive-yellow text-interactive-dark font-body font-bold text-base rounded shadow-lg hover:opacity-95 transition-opacity flex items-center justify-center"
+          class="w-full max-w-sm py-4 px-6 bg-interactive-yellow text-interactive-dark font-body font-bold text-base rounded shadow-lg hover:opacity-95 transition-all duration-1000 opacity-0 flex items-center justify-center"
         >
           Conocé nuestras propuestas
         </a>
