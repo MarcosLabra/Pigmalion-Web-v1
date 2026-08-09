@@ -21,6 +21,10 @@
   --background-image-gradient-hero: linear-gradient(0deg, #111111 0%, #1B2631 54.79%, #566573 100%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Menú mobile con deslizamiento por transformaciones (rápido y fluido en ambos sentidos) */
 .mobile-menu-closed {
   opacity: 0;
