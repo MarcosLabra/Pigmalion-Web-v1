@@ -3,56 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Pigmalión</title>
-    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-C_9tMkMH.js"></script>
-    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-_RcIgRU-.css">
+    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-D3_xv_jh.js"></script>
+    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-cxVR64RD.css">
   </head>
 
   <body class="bg-surface-background font-body text-text-primary">
-    <!-- Header & Navegación Mobile First -->
-    <header class="absolute top-0 left-0 w-full z-50 px-6 py-4">
+    <header
+      id="main-header"
+      class="fixed top-0 left-0 w-full z-50 px-6 py-4 transition-colors duration-300 bg-transparent"
+    >
       <div class="max-w-7xl mx-auto flex items-center justify-between">
         <a href="#" class="flex items-center gap-2">
-          <!-- La imagen del logo -->
           <img
             src="/Pigmalion-Web-v1/assets/Light-Logo-KGxrSgO8.svg"
             alt="Pigmalión - Consultoría estratégica e ingeniería digital"
             class="h-10 w-auto object-contain"
           />
-
-          <!-- Texto oculto visualmente pero indexable para SEO -->
           <h1 class="sr-only">
             Pigmalión: Consultoría estratégica e ingeniería digital
           </h1>
         </a>
 
-        <!-- Botón Menú Hamburguesa (Trigger) -->
+        <!-- Menú de Navegación Desktop -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="#servicios"
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium"
+            >Servicios</a
+          >
+          <a
+            href="#sobre-nosotros"
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium"
+            >Sobre nosotros</a
+          >
+          <a
+            href="#contacto"
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium"
+            >Contacto</a
+          >
+          <a
+            href="https://instagram.com/tu-usuario"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-text-light hover:text-interactive-yellow transition-colors font-medium"
+            >Instagram</a
+          >
+          <a
+            href="https://wa.me/tu-numero"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-interactive-yellow text-interactive-dark px-4 py-2 rounded font-bold hover:opacity-95 transition-opacity"
+            >WhatsApp</a
+          >
+        </nav>
+
+        <!-- Botón Menú Hamburguesa Animado -->
         <button
           id="menu-btn"
           aria-label="Abrir menú"
-          class="text-text-light focus:outline-none md:hidden"
+          class="text-text-light focus:outline-none md:hidden w-8 h-8 flex flex-col justify-center items-center relative z-50"
         >
-          <svg
-            class="w-7 h-7"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
+          <span
+            class="hamburger-line w-6 h-0.5 bg-text-light rounded-full transition-all duration-300 transform origin-center absolute top-2"
+          ></span>
+          <span
+            class="hamburger-line w-6 h-0.5 bg-text-light rounded-full transition-all duration-300 transform origin-center absolute"
+          ></span>
+          <span
+            class="hamburger-line w-6 h-0.5 bg-text-light rounded-full transition-all duration-300 transform origin-center absolute bottom-2"
+          ></span>
         </button>
       </div>
 
       <!-- Menú Desplegable Mobile -->
       <div
         id="mobile-menu"
-        class="hidden absolute top-full left-0 w-full bg-interactive-dark/40 backdrop-blur-md px-6 py-6 border-t border-text-light/10 shadow-2xl md:hidden"
+        class="mobile-menu-closed absolute top-full left-0 w-full bg-interactive-dark/90 backdrop-blur-md px-6 py-6 border-b border-text-light/10 shadow-2xl md:hidden"
       >
         <nav class="flex flex-col gap-4 text-center">
           <a
@@ -70,6 +98,31 @@
             class="mobile-link text-text-light text-lg py-2 hover:text-interactive-yellow transition-colors"
             >Contacto</a
           >
+
+        <!-- Fila de Iconos de Font Awesome -->
+      <div class="flex items-center justify-center gap-6 pt-4 border-t border-text-light/10 mt-2">
+        <!-- Instagram -->
+        <a
+          href="https://instagram.com/tu-usuario"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-link text-text-light hover:text-interactive-yellow transition-colors"
+          aria-label="Instagram"
+        >
+          <i class="fa-brands fa-instagram text-2xl"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/tu-numero"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-link text-text-light hover:text-interactive-yellow transition-colors"
+          aria-label="WhatsApp"
+        >
+          <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+      </div>
         </nav>
       </div>
 
@@ -78,7 +131,6 @@
         class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-white/0 to-white/10 pointer-events-none"
       ></div>
     </header>
-
     <!-- Hero Section -->
     <section
       class="relative flex flex-col items-center justify-center min-h-screen px-6 py-16 text-center bg-gradient-hero overflow-hidden"
@@ -213,7 +265,80 @@
         </a>
       </div>
     </section>
+    <!-- Footer Section -->
+    <footer
+      class="bg-interactive-dark text-text-light py-12 px-6 border-t border-text-light/10"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left"
+      >
+        <!-- Columna 1: Isologotipo o Marca -->
+        <div class="flex flex-col items-center md:items-start gap-2">
+          <a href="#" class="flex items-center">
+            <img
+              src="/Pigmalion-Web-v1/assets/light-isologotipo-L6IBgPoY.svg"
+              alt="Pigmalión - Consultoría estratégica e ingeniería digital"
+              class="h-16 w-auto object-contain"
+            />
+          </a>
+          <p class="text-sm text-text-secondary max-w-xs">
+            Consultoría estratégica e ingeniería digital para instituciones
+            educativas.
+          </p>
+        </div>
 
+        <!-- Columna 2: Enlaces rápidos -->
+        <nav class="flex flex-col md:flex-row justify-center gap-6 text-sm">
+          <a
+            href="#servicios"
+            class="hover:text-interactive-yellow transition-colors"
+            >Servicios</a
+          >
+          <a
+            href="#sobre-nosotros"
+            class="hover:text-interactive-yellow transition-colors"
+            >Sobre nosotros</a
+          >
+          <a
+            href="#contacto"
+            class="hover:text-interactive-yellow transition-colors"
+            >Contacto</a
+          >
+        </nav>
+
+        <!-- Columna 3: Iconos de Font Awesome -->
+        <div class="flex items-center justify-center md:justify-end gap-6 pt-4 md:pt-0">
+          <!-- Instagram -->
+          <a
+            href="https://instagram.com/tu-usuario"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-text-light hover:text-interactive-yellow transition-colors"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram text-2xl"></i>
+          </a>
+
+          <!-- WhatsApp -->
+          <a
+            href="https://wa.me/tu-numero"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-text-light hover:text-interactive-yellow transition-colors"
+            aria-label="WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Línea de Copyright -->
+      <div
+        class="max-w-7xl mx-auto mt-8 pt-6 border-t border-text-light/5 text-center text-xs text-text-secondary"
+      >
+        &copy; 2026 Pigmalión. Todos los derechos reservados.
+      </div>
+    </footer>
     <!-- Script principal de Vite -->
   </body>
 </html>
