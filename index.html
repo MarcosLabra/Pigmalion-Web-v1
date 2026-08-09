@@ -294,15 +294,17 @@
       </div>
     </section>
     <!-- Sección Filosofía / Propuesta -->
-    <section class="relative bg-surface-black py-6 px-6 overflow-hidden">
-      <div class="max-w-4xl mx-auto flex flex-col items-center">
+    <section
+      class="relative bg-surface-black py-16 px-6 md:py-[60px] md:px-[40px] overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto flex flex-col items-center">
         <!-- Bloque de Cita con Comillas Centradas y Letras Separadas -->
-        <div class="relative max-w-xl mx-auto text-center py-6 px-4 mb-16">
-          <!-- Comilla Superior Izquierda (Más cercana al centro) -->
+        <div class="relative max-w-2xl mx-auto text-center py-6 px-4 mb-16">
+          <!-- Comilla Superior Izquierda -->
           <img
             src="./src/assets/comillas.svg"
             alt="Comillas"
-            class="absolute top-2 left-6 sm:left-12 w-[60px] h-[48px] opacity-90 pointer-events-none z-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+            class="absolute top-0 left-2 sm:left-4 w-[50px] sm:w-[60px] h-[40px] sm:h-[48px] opacity-90 pointer-events-none z-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
           />
 
           <!-- Texto de la Cita con tracking (separación de letras) -->
@@ -311,25 +313,26 @@
           >
             En una era donde todo cambia <br class="hidden sm:inline" />
             vertiginosamente, solo queda <br />
-            apostara lo que permanece: <br />
+            apostar a lo que permanece: <br />
             <span
               class="text-[#8c52b5] font-bold text-2xl sm:text-3xl lg:text-4xl not-italic tracking-normal inline-block mt-1 drop-shadow-[0_0_20px_rgba(140,82,181,0.8)]"
               >el ser humano.</span
             >
           </p>
 
-          <!-- Comilla Inferior Derecha (Más cercana al centro y rotada 180°) -->
+          <!-- Comilla Inferior Derecha (Rotada 180°) -->
           <img
             src="./src/assets/comillas.svg"
             alt="Comillas"
-            class="absolute bottom-4 right-6 sm:right-12 w-[32px] h-[26px] opacity-90 rotate-180 pointer-events-none z-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+            class="absolute bottom-0 right-2 sm:right-4 w-[28px] sm:w-[32px] h-[22px] sm:h-[26px] opacity-90 rotate-180 pointer-events-none z-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
           />
         </div>
-        <!-- Tarjetas de Características / Pilares (Estilo Figma exacto) -->
-        <div class="w-full grid grid-cols-1 gap-6 mb-12">
+
+        <!-- Tarjetas de Características / Pilares (1 columna en mobile, 3 columnas en tablet/desktop) -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <!-- Tarjeta 1 -->
           <div
-            class="bg-[#1A1A1A] border-[1px] border-[#754595]/40 rounded-[12px] p-8 text-center shadow-[inset_0_2px_12px_rgba(117,69,149,0.25)]"
+            class="bg-[#1A1A1A] border-[1px] border-[#754595]/40 rounded-[12px] p-8 text-center shadow-[inset_0_2px_12px_rgba(117,69,149,0.25)] flex flex-col justify-center"
           >
             <h3
               class="font-heading text-xl sm:text-2xl font-bold text-text-light mb-3"
@@ -346,7 +349,7 @@
 
           <!-- Tarjeta 2 -->
           <div
-            class="bg-[#1A1A1A] border-[1px] border-[#754595]/40 rounded-[12px] p-8 text-center shadow-[inset_0_2px_12px_rgba(117,69,149,0.25)]"
+            class="bg-[#1A1A1A] border-[1px] border-[#754595]/40 rounded-[12px] p-8 text-center shadow-[inset_0_2px_12px_rgba(117,69,149,0.25)] flex flex-col justify-center"
           >
             <h3
               class="font-heading text-xl sm:text-2xl font-bold text-text-light mb-3"
@@ -363,7 +366,7 @@
 
           <!-- Tarjeta 3 -->
           <div
-            class="bg-[#1A1A1A] border-[1px] border-[#754595]/40 rounded-[12px] p-8 text-center shadow-[inset_0_2px_12px_rgba(117,69,149,0.25)]"
+            class="bg-[#1A1A1A] border-[1px] border-[#754595]/40 rounded-[12px] p-8 text-center shadow-[inset_0_2px_12px_rgba(117,69,149,0.25)] flex flex-col justify-center"
           >
             <h3
               class="font-heading text-xl sm:text-2xl font-bold text-text-light mb-3"
@@ -392,11 +395,11 @@
     <!-- Sección Servicios y Consultoría -->
     <section
       id="servicios"
-      class="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-surface-black via-interactive-dark to-surface-secondary"
+      class="relative py-24 px-6 md:py-[60px] md:px-[40px] overflow-hidden bg-gradient-to-b from-surface-black via-interactive-dark to-surface-secondary"
     >
-      <div class="max-w-4xl mx-auto flex flex-col items-center">
+      <div class="max-w-7xl mx-auto flex flex-col items-center">
         <!-- Cabecera de la Sección (Alineada a la izquierda) -->
-        <div class="w-full text-left mb-16">
+        <div class="w-full text-left mb-16 max-w-4xl">
           <span
             class="text-interactive-yellow font-heading uppercase tracking-widest text-sm sm:text-base font-semibold block mb-3"
           >
@@ -409,11 +412,11 @@
           </h2>
         </div>
 
-        <!-- Contenedor de Tarjetas -->
-        <div class="w-full grid grid-cols-1 gap-8">
+        <!-- Contenedor de Tarjetas (1 col en mobile, 2 cols arriba y 1 col ancha abajo en tablet/desktop) -->
+        <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Tarjeta 1: Consultoría Estratégica Educativa -->
           <div
-            class="bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 text-center shadow-2xl transition-transform duration-300 hover:scale-[1.01]"
+            class="bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 text-center shadow-2xl transition-transform duration-300 hover:scale-[1.01] flex flex-col justify-center"
           >
             <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">
               Consultoría Estratégica Educativa
@@ -428,7 +431,7 @@
 
           <!-- Tarjeta 2: Ingeniería Digital Pedagógica -->
           <div
-            class="bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 text-center shadow-2xl transition-transform duration-300 hover:scale-[1.01]"
+            class="bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 text-center shadow-2xl transition-transform duration-300 hover:scale-[1.01] flex flex-col justify-center"
           >
             <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">
               Ingeniería Digital Pedagógica
@@ -442,9 +445,9 @@
             </p>
           </div>
 
-          <!-- Tarjeta 3: Tutorías Individuales -->
+          <!-- Tarjeta 3: Tutorías Individuales (Ocupa todo el ancho en tablet/desktop) -->
           <div
-            class="bg-interactive-purple text-text-light rounded-[24px] p-8 sm:p-10 text-center shadow-2xl transition-transform duration-300 hover:scale-[1.01]"
+            class="bg-interactive-purple text-text-light rounded-[24px] p-8 sm:p-10 text-center shadow-2xl transition-transform duration-300 hover:scale-[1.01] md:col-span-2 flex flex-col justify-center"
           >
             <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">
               Tutorías Individuales
@@ -463,11 +466,11 @@
     <!-- Sección Propuestas Formativas -->
     <section
       id="propuestas"
-      class="relative py-24 px-6 overflow-hidden bg-surface-secondary text-text-light pt-4"
+      class="relative py-24 px-6 md:py-[60px] md:px-[40px] overflow-hidden bg-surface-secondary text-text-light pt-4"
     >
-      <div class="max-w-4xl mx-auto flex flex-col items-center">
+      <div class="max-w-7xl mx-auto flex flex-col items-center">
         <!-- Título de la Sección -->
-        <div class="w-full text-left mb-10">
+        <div class="w-full text-left mb-10 max-w-5xl">
           <h2
             class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-text-light"
           >
@@ -475,63 +478,60 @@
           </h2>
         </div>
 
-        <!-- Filtros interactivos (2 por línea) -->
+        <!-- Filtros interactivos -->
         <div
-          class="w-full flex flex-col gap-6 mb-12 max-w-lg mx-auto sm:max-w-none"
+          class="w-full flex flex-col items-center gap-6 mb-12 max-w-lg mx-auto sm:max-w-none"
         >
           <!-- Grupo 1: Audiencia -->
-          <div
-            class="grid grid-cols-2 sm:flex sm:flex-wrap justify-start gap-3"
-            id="filter-audience"
-          >
+          <div class="flex flex-wrap justify-center gap-3" id="filter-audience">
             <button
               data-filter="docentes"
-              class="filter-btn-audience active w-full sm:w-[150px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-purple shadow-md text-text-light border-transparent text-center"
+              class="filter-btn-audience active w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-purple shadow-md text-text-light border-transparent text-center"
             >
               Docentes
             </button>
             <button
               data-filter="familias"
-              class="filter-btn-audience active w-full sm:w-[150px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-purple shadow-md text-text-light border-transparent text-center"
+              class="filter-btn-audience active w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-purple shadow-md text-text-light border-transparent text-center"
             >
               Familias
             </button>
           </div>
 
           <!-- Grupo 2: Niveles -->
-          <div
-            class="grid grid-cols-2 sm:flex sm:flex-wrap justify-start gap-3"
-            id="filter-level"
-          >
+          <div class="flex flex-wrap justify-center gap-3" id="filter-level">
             <button
               data-filter="inicial"
-              class="filter-btn-level active w-full sm:w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
             >
               Inicial
             </button>
             <button
               data-filter="primaria"
-              class="filter-btn-level active w-full sm:w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
             >
               Primaria
             </button>
             <button
               data-filter="secundaria"
-              class="filter-btn-level active w-full sm:w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
             >
               Secundaria
             </button>
             <button
               data-filter="superior"
-              class="filter-btn-level active w-full sm:w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
             >
               Superior
             </button>
           </div>
         </div>
 
-        <!-- Contenedor Dinámico de Tarjetas -->
-        <div id="cards-container" class="w-full flex flex-col gap-8 mb-12">
+        <!-- Contenedor Dinámico de Tarjetas (items-start para que cada tarjeta use solo el alto necesario) -->
+        <div
+          id="cards-container"
+          class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 md:items-start gap-8 mb-12"
+        >
           <!-- Tarjeta 1 -->
           <div
             class="proposal-card bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 shadow-2xl transition-all duration-300"
@@ -672,7 +672,7 @@
 
         <!-- Banner inferior y Botón CTA -->
         <div
-          class="w-full bg-interactive-dark/60 backdrop-blur-md border border-text-light/10 rounded-2xl p-6 text-center mb-6"
+          class="w-full max-w-5xl bg-interactive-dark/60 backdrop-blur-md border border-text-light/10 rounded-2xl p-6 text-center mb-6"
         >
           <p class="font-body text-text-light text-sm sm:text-base">
             ¿No encontras lo que buscas? Diseñemos juntos una
@@ -694,9 +694,9 @@
     <!-- Sección Sobre nosotros -->
     <section
       id="sobre-nosotros"
-      class="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-surface-secondary via-interactive-dark to-surface-black text-text-light"
+      class="relative py-24 px-6 md:py-[60px] md:px-[40px] overflow-hidden bg-gradient-to-b from-surface-secondary via-interactive-dark to-surface-black text-text-light"
     >
-      <div class="max-w-4xl mx-auto flex flex-col items-center">
+      <div class="max-w-5xl mx-auto flex flex-col items-center">
         <!-- Cabecera de la Sección -->
         <div class="w-full text-left mb-12">
           <span
@@ -726,85 +726,97 @@
           </p>
         </div>
 
-        <!-- Perfil 1: Mario De Paolo -->
-        <div class="w-full flex flex-col items-center mb-20">
-          <!-- Foto con outline más fino y glow violeta -->
-          <div
-            class="relative mb-8 rounded-[20px] p-[1px] bg-gradient-to-b from-[#754595] to-[#9b51e0] shadow-[0_0_40px_rgba(117,69,149,0.7)]"
-          >
-            <img
-              src="./src/assets/mario.png"
-              alt="Mario De Paolo"
-              class="w-[60vw] max-w-md rounded-[19px] object-cover aspect-[4/3]"
-            />
+        <!-- Perfil 1: Mario De Paolo (Foto izquierda, Texto derecha con flex-nowrap en md para evitar salto vertical) -->
+        <div
+          class="w-full flex flex-col md:flex-row gap-[24px] items-start mb-20"
+        >
+          <!-- Columna Foto -->
+          <div class="flex-shrink-0 mx-auto md:mx-0">
+            <div
+              class="relative rounded-[20px] p-[1px] bg-gradient-to-b from-[#754595] to-[#9b51e0] shadow-[0_0_40px_rgba(117,69,149,0.7)]"
+            >
+              <img
+                src="./src/assets/mario.png"
+                alt="Mario De Paolo"
+                class="w-[225px] h-[338px] rounded-[19px] object-cover"
+              />
+            </div>
           </div>
 
-          <h3
-            class="font-heading text-2xl sm:text-3xl font-bold text-text-light text-center mb-6"
-          >
-            Mario De Paolo
-          </h3>
+          <!-- Columna Texto -->
+          <div class="flex flex-col text-left flex-grow">
+            <h3
+              class="font-heading text-2xl sm:text-3xl font-bold text-text-light mb-4 text-center md:text-left"
+            >
+              Mario De Paolo
+            </h3>
 
-          <div
-            class="w-full space-y-4 font-body text-text-light text-base sm:text-lg leading-relaxed"
-          >
-            <p>
-              Coordina equipos de educación digital desde 2012, capacitando a
-              docentes y acompañando a las escuelas en la incorporación crítica
-              de tecnología y robótica a nivel regional.
-            </p>
-            <p>
-              Es docente en la UTN Mar del Plata en las áreas de estadística,
-              análisis de datos y arquitectura de sistemas, y forma parte del
-              equipo de formación continua de docentes en Ciencias de la
-              Computación.
-            </p>
-            <p>
-              Su trayectoria articula la gestión pública, la implementación de
-              programas nacionales de conectividad y una sólida base técnica
-              aplicada directamente al fortalecimiento de los procesos de
-              enseñanza.
-            </p>
+            <div
+              class="space-y-4 font-body text-text-light text-base leading-relaxed"
+            >
+              <p>
+                Coordina equipos de educación digital desde 2012, capacitando a
+                docentes y acompañando a las escuelas en la incorporación
+                crítica de tecnología y robótica a nivel regional.
+              </p>
+              <p>
+                Es docente en la UTN Mar del Plata en las áreas de estadística,
+                análisis de datos y arquitectura de sistemas, y forma parte del
+                equipo de formación continua de docentes en Ciencias de la
+                Computación.
+              </p>
+              <p>
+                Su trayectoria articula la gestión pública, la implementación de
+                programas nacionales de conectividad y una sólida base técnica
+                aplicada directamente al fortalecimiento de los procesos de
+                enseñanza.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Perfil 2: Marcos Labra -->
-        <div class="w-full flex flex-col items-center">
-          <!-- Foto con outline más fino y glow violeta -->
-          <div
-            class="relative mb-8 rounded-[20px] p-[1px] bg-gradient-to-b from-[#754595] to-[#9b51e0] shadow-[0_0_40px_rgba(117,69,149,0.7)]"
-          >
-            <img
-              src="./src/assets/marcos.png"
-              alt="Marcos Labra"
-              class="w-[60vw] max-w-md rounded-[19px] object-cover aspect-[4/3]"
-            />
+        <!-- Perfil 2: Marcos Labra (Texto izquierda, Foto derecha con flex-nowrap en md para mantener la estructura horizontal) -->
+        <div class="w-full flex flex-col md:flex-row gap-[24px] items-start">
+          <!-- Columna Texto (Orden 2 en mobile, orden 1 en tablet) -->
+          <div class="flex flex-col text-left flex-grow order-2 md:order-1">
+            <h3
+              class="font-heading text-2xl sm:text-3xl font-bold text-text-light mb-4 text-center md:text-left"
+            >
+              Marcos Labra
+            </h3>
+
+            <div
+              class="space-y-4 font-body text-text-light text-base leading-relaxed"
+            >
+              <p>
+                Con 15 años de trayectoria docente, se desempeña hace 9 como
+                facilitador digital capacitando a equipos docentes y liderando
+                talleres de desarrollo web, robótica y programación en proyectos
+                institucionales.
+              </p>
+              <p>
+                Cuenta con experiencia en la formación docente y ha sido tutor
+                internacional de programación, lógica y modelado 3D en
+                plataformas lúdicas avanzadas para estudiantes de toda
+                Latinoamérica. Su perfil combina la docencia en lenguajes
+                artísticos con la formación terapéutica en escuelas especiales,
+                impulsando actualmente proyectos que integran herramientas de
+                Inteligencia Artificial y producción audiovisual accesible.
+              </p>
+            </div>
           </div>
 
-          <h3
-            class="font-heading text-2xl sm:text-3xl font-bold text-text-light text-center mb-6"
-          >
-            Marcos Labra
-          </h3>
-
-          <div
-            class="w-full space-y-4 font-body text-text-light text-base sm:text-lg leading-relaxed"
-          >
-            <p>
-              Con 15 años de trayectoria docente, se desempeña hace 9 como
-              facilitador digital capacitando a equipos docentes y liderando
-              talleres de desarrollo web, robótica y programación en proyectos
-              institucionales.
-            </p>
-            <p>
-              Cuenta con experiencia en la formación docente y ha sido tutor
-              internacional de programación, lógica y modelado 3D en plataformas
-              lúdicas avanzadas para estudiantes de toda Latinoamérica. Su
-              perfil combina la docencia en lenguajes artísticos con la
-              formación terapéutica en escuelas especiales, impulsando
-              actualmente proyectos que integran herramientas de Inteligencia
-              Artificial y producción audiovisual accesible.
-            </p>
+          <!-- Columna Foto (Orden 1 en mobile, orden 2 en tablet) -->
+          <div class="flex-shrink-0 mx-auto md:mx-0 order-1 md:order-2">
+            <div
+              class="relative rounded-[20px] p-[1px] bg-gradient-to-b from-[#754595] to-[#9b51e0] shadow-[0_0_40px_rgba(117,69,149,0.7)]"
+            >
+              <img
+                src="./src/assets/marcos.png"
+                alt="Marcos Labra"
+                class="w-[225px] h-[338px] rounded-[19px] object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -812,11 +824,11 @@
     <!-- Sección Experiencias / Formación en acción -->
     <section
       id="experiencias"
-      class="relative py-24 px-6 overflow-hidden bg-surface-black text-text-light"
+      class="relative py-24 px-6 md:py-[60px] md:px-[40px] overflow-hidden bg-surface-black text-text-light"
     >
-      <div class="max-w-4xl mx-auto flex flex-col items-center">
+      <div class="max-w-5xl mx-auto flex flex-col items-center">
         <!-- Cabecera de la Sección (Alineada a la izquierda) -->
-        <div class="w-full text-left mb-16">
+        <div class="w-full text-left mb-16 max-w-[430px]">
           <span
             class="text-interactive-yellow font-heading uppercase tracking-widest text-sm sm:text-base font-semibold block mb-3"
           >
@@ -829,20 +841,20 @@
           </h2>
         </div>
 
-        <!-- Tarjeta de Experiencia -->
+        <!-- Tarjeta de Experiencia con ancho fijo de aprox 430px (max-w-[430px]) -->
         <div
-          class="w-full bg-interactive-dark border-[0.5px] border-[#754595]/40 rounded-[20px] p-8 sm:p-12 flex flex-col items-start"
+          class="w-full max-w-[430px] bg-interactive-dark border-[0.5px] border-[#754595]/40 rounded-[20px] p-6 sm:p-8 flex flex-col items-start mx-auto"
         >
-          <!-- Título del caso -->
+          <!-- Título del caso (Forzado a la izquierda) -->
           <h3
-            class="font-heading text-xl sm:text-3xl font-bold text-text-light mb-2"
+            class="font-heading text-xl sm:text-2xl font-bold text-text-light mb-2 !text-left w-full"
           >
             IA, tu nueva pareja pedagógica
           </h3>
 
-          <!-- Subtítulo / Institución -->
+          <!-- Subtítulo / Institución (Forzado a la izquierda) -->
           <p
-            class="font-heading italic text-text-light text-base sm:text-lg mb-8"
+            class="font-heading italic text-text-light text-sm sm:text-base mb-6 !text-left w-full"
           >
             Escuela Especial Asociación Manuel Belgrano <br />
             El Portal del Sol
@@ -850,47 +862,47 @@
 
           <!-- Bloque de Métricas / Estadísticas Internas (Horizontal en todas las pantallas) -->
           <div
-            class="w-full grid grid-cols-3 gap-2 sm:gap-4 bg-surface-black border border-text-light/5 rounded-2xl p-4 sm:p-6 mb-8 text-center shadow-inner"
+            class="w-full grid grid-cols-3 gap-2 bg-surface-black border border-text-light/5 rounded-xl p-3 mb-6 text-center shadow-inner"
           >
             <!-- Métrica 1 -->
-            <div class="flex flex-col items-center justify-center p-2">
+            <div class="flex flex-col items-center justify-center p-1">
               <span
-                class="font-heading text-2xl sm:text-4xl font-bold text-interactive-yellow mb-1"
+                class="font-heading text-xl sm:text-2xl font-bold text-interactive-yellow mb-1"
                 >40</span
               >
-              <span class="font-body text-[11px] sm:text-sm text-text-secondary"
+              <span class="font-body text-[10px] sm:text-xs text-text-secondary"
                 >Docentes formados</span
               >
             </div>
 
             <!-- Métrica 2 -->
             <div
-              class="flex flex-col items-center justify-center p-2 border-x border-text-light/10"
+              class="flex flex-col items-center justify-center p-1 border-x border-text-light/10"
             >
               <span
-                class="font-heading text-2xl sm:text-4xl font-bold text-interactive-yellow mb-1"
+                class="font-heading text-xl sm:text-2xl font-bold text-interactive-yellow mb-1"
                 >4hs</span
               >
-              <span class="font-body text-[11px] sm:text-sm text-text-secondary"
+              <span class="font-body text-[10px] sm:text-xs text-text-secondary"
                 >Sesión intensiva</span
               >
             </div>
 
             <!-- Métrica 3 -->
-            <div class="flex flex-col items-center justify-center p-2">
+            <div class="flex flex-col items-center justify-center p-1">
               <span
-                class="font-heading text-2xl sm:text-4xl font-bold text-interactive-yellow mb-1"
+                class="font-heading text-xl sm:text-2xl font-bold text-interactive-yellow mb-1"
                 >RAG</span
               >
-              <span class="font-body text-[11px] sm:text-sm text-text-secondary"
+              <span class="font-body text-[10px] sm:text-xs text-text-secondary"
                 >Ecosistema seguro</span
               >
             </div>
           </div>
 
-          <!-- Descripción del proyecto (Centrada y con ancho controlado para replicar el wrap visual) -->
+          <!-- Descripción del proyecto -->
           <p
-            class="font-body text-text-light text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-center"
+            class="font-body text-text-light text-sm sm:text-base leading-relaxed text-left w-full"
           >
             Diseño e implementación de una capacitación intensiva sobre el uso
             estratégico y responsable de la Inteligencia Artificial en el aula,
@@ -907,14 +919,120 @@
         </div>
       </div>
     </section>
+    <!-- Sección Experiencias / Formación en acción -->
+    <section
+      id="experiencias"
+      class="relative py-24 px-6 md:py-[60px] md:px-[40px] overflow-hidden bg-surface-black text-text-light"
+    >
+      <div
+        class="max-w-5xl mx-auto flex flex-col items-center md:items-start w-full"
+      >
+        <!-- Bloque 1: Cabecera de la Sección (Independiente y alineada a la izquierda) -->
+        <div class="w-full text-center md:text-left mb-16 max-w-2xl">
+          <span
+            class="text-interactive-yellow font-heading uppercase tracking-widest text-sm sm:text-base font-semibold block mb-3"
+          >
+            Formacion en acción
+          </span>
+          <h2
+            class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-text-light"
+          >
+            La práctica como validador pedagógico.
+          </h2>
+        </div>
+
+        <!-- Bloque 2: Contenedor de la Tarjeta (Aprox 430px y centrada de forma independiente) -->
+        <div class="w-full flex justify-center">
+          <div
+            class="w-full max-w-[430px] bg-interactive-dark border-[0.5px] border-[#754595]/40 rounded-[20px] p-6 sm:p-8 flex flex-col items-start mx-auto"
+          >
+            <!-- Título del caso -->
+            <h3
+              class="font-heading text-xl sm:text-2xl font-bold text-text-light mb-2 text-left w-full"
+            >
+              IA, tu nueva pareja pedagógica
+            </h3>
+
+            <!-- Subtítulo / Institución -->
+            <p
+              class="font-heading italic text-text-light text-sm sm:text-base mb-6 text-left w-full"
+            >
+              Escuela Especial Asociación Manuel Belgrano <br />
+              El Portal del Sol
+            </p>
+
+            <!-- Bloque de Métricas / Estadísticas Internas (Horizontal en todas las pantallas) -->
+            <div
+              class="w-full grid grid-cols-3 gap-2 bg-surface-black border border-text-light/5 rounded-xl p-3 mb-6 text-center shadow-inner"
+            >
+              <!-- Métrica 1 -->
+              <div class="flex flex-col items-center justify-center p-1">
+                <span
+                  class="font-heading text-xl sm:text-2xl font-bold text-interactive-yellow mb-1"
+                  >40</span
+                >
+                <span
+                  class="font-body text-[10px] sm:text-xs text-text-secondary"
+                  >Docentes formados</span
+                >
+              </div>
+
+              <!-- Métrica 2 -->
+              <div
+                class="flex flex-col items-center justify-center p-1 border-x border-text-light/10"
+              >
+                <span
+                  class="font-heading text-xl sm:text-2xl font-bold text-interactive-yellow mb-1"
+                  >4hs</span
+                >
+                <span
+                  class="font-body text-[10px] sm:text-xs text-text-secondary"
+                  >Sesión intensiva</span
+                >
+              </div>
+
+              <!-- Métrica 3 -->
+              <div class="flex flex-col items-center justify-center p-1">
+                <span
+                  class="font-heading text-xl sm:text-2xl font-bold text-interactive-yellow mb-1"
+                  >RAG</span
+                >
+                <span
+                  class="font-body text-[10px] sm:text-xs text-text-secondary"
+                  >Ecosistema seguro</span
+                >
+              </div>
+            </div>
+
+            <!-- Descripción del proyecto -->
+            <p
+              class="font-body text-text-light text-sm sm:text-base leading-relaxed text-left w-full"
+            >
+              Diseño e implementación de una capacitación intensiva sobre el uso
+              estratégico y responsable de la Inteligencia Artificial en el
+              aula, adaptada a las necesidades específicas de la Educación
+              Especial. A través de la integración práctica de modelos de
+              lenguaje avanzados (LLMs) y sistemas de recuperación de
+              información (RAG), los docentes aprendieron a diseñar asistentes
+              virtuales personalizados capaces de generar planificaciones,
+              secuencias didácticas y proyectos de inclusión. El foco principal
+              del taller estuvo en la validación pedagógica: lograr que la
+              tecnología responda de forma segura, fiel y estrictamente alineada
+              a los documentos y diseños curriculares oficiales del sistema
+              educativo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Sección Contacto -->
     <section
       id="contacto"
-      class="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-surface-black via-interactive-dark to-surface-secondary text-text-light"
+      class="relative py-24 px-6 md:py-[60px] md:px-[40px] overflow-hidden bg-gradient-to-b from-surface-black via-interactive-dark to-surface-secondary text-text-light"
     >
-      <div class="max-w-4xl mx-auto flex flex-col items-start">
+      <div class="max-w-5xl mx-auto flex flex-col items-start">
         <!-- Cabecera de la Sección (Alineada a la izquierda) -->
-        <div class="w-full text-left mb-8">
+        <div class="w-full text-left mb-8 max-w-3xl">
           <span
             class="text-interactive-yellow font-heading uppercase tracking-widest text-sm sm:text-base font-semibold block mb-3"
           >
@@ -928,7 +1046,7 @@
         </div>
 
         <!-- Descripción -->
-        <div class="w-full text-left mb-32 max-w-2xl">
+        <div class="w-full text-left mb-20 max-w-2xl">
           <p
             class="font-body text-text-light text-base sm:text-lg leading-relaxed"
           >
@@ -953,7 +1071,7 @@
     </section>
     <!-- Footer Section -->
     <footer
-      class="relative bg-interactive-dark text-text-light py-12 px-6 overflow-hidden"
+      class="relative bg-interactive-dark text-text-light py-12 px-8 md:py-[60px] md:px-[80px] overflow-hidden"
     >
       <!-- Línea superior con opacidad 100 al centro y 0 en las puntas -->
       <div
@@ -961,9 +1079,9 @@
       ></div>
 
       <div
-        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left"
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start text-center md:text-left mb-8"
       >
-        <!-- Columna 1: Isologotipo o Marca -->
+        <!-- Columna Izquierda: Isologotipo y Subtítulo -->
         <div class="flex flex-col items-center md:items-start gap-2">
           <a href="#" class="flex items-center">
             <img
@@ -978,61 +1096,63 @@
           </p>
         </div>
 
-        <!-- Columna 2: Enlaces rápidos -->
-        <nav class="flex flex-col md:flex-row justify-center gap-6 text-sm">
-          <a
-            href="#servicios"
-            class="hover:text-interactive-yellow transition-colors"
-            >Servicios</a
-          >
-          <a
-            href="#sobre-nosotros"
-            class="hover:text-interactive-yellow transition-colors"
-            >Sobre nosotros</a
-          >
-          <a
-            href="#experiencias"
-            class="hover:text-interactive-yellow transition-colors"
-            >Experiencias</a
-          >
-          <a
-            href="#contacto"
-            class="hover:text-interactive-yellow transition-colors"
-            >Contacto</a
-          >
-        </nav>
-
-        <!-- Columna 3: Iconos de Font Awesome -->
-        <div
-          class="flex items-center justify-center md:justify-end gap-6 pt-4 md:pt-0"
-        >
-          <!-- Instagram -->
-          <a
-            href="https://instagram.com/tu-usuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-text-light hover:text-interactive-yellow transition-colors"
-            aria-label="Instagram"
-          >
-            <i class="fa-brands fa-instagram text-2xl"></i>
-          </a>
-
-          <!-- WhatsApp -->
-          <a
-            href="https://wa.me/tu-numero"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-text-light hover:text-interactive-yellow transition-colors"
-            aria-label="WhatsApp"
-          >
-            <i class="fa-brands fa-whatsapp text-2xl"></i>
-          </a>
+        <!-- Columna Derecha: Enlaces rápidos uno sobre otro -->
+        <div class="flex flex-col items-center md:items-end gap-3">
+          <nav class="flex flex-col items-center md:items-end gap-3 text-sm">
+            <a
+              href="#servicios"
+              class="hover:text-interactive-yellow transition-colors"
+              >Servicios</a
+            >
+            <a
+              href="#sobre-nosotros"
+              class="hover:text-interactive-yellow transition-colors"
+              >Sobre nosotros</a
+            >
+            <a
+              href="#experiencias"
+              class="hover:text-interactive-yellow transition-colors"
+              >Experiencias</a
+            >
+            <a
+              href="#contacto"
+              class="hover:text-interactive-yellow transition-colors"
+              >Contacto</a
+            >
+          </nav>
         </div>
+      </div>
+
+      <!-- Iconos de Redes Sociales Centrados en todo el footer -->
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-center gap-6 my-8"
+      >
+        <!-- Instagram -->
+        <a
+          href="https://instagram.com/tu-usuario"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-light hover:text-interactive-yellow transition-colors"
+          aria-label="Instagram"
+        >
+          <i class="fa-brands fa-instagram text-2xl"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/tu-numero"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-light hover:text-interactive-yellow transition-colors"
+          aria-label="WhatsApp"
+        >
+          <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
       </div>
 
       <!-- Línea de Copyright -->
       <div
-        class="max-w-7xl mx-auto mt-8 pt-6 border-t border-text-light/5 text-center text-xs text-text-secondary"
+        class="max-w-7xl mx-auto pt-6 border-t border-text-light/5 text-center text-xs text-text-secondary"
       >
         &copy; 2026 Pigmalión. Todos los derechos reservados.
       </div>
