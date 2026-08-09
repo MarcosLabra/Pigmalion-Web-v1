@@ -34,6 +34,58 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Secuencia de máquina de escribir y encendido en el Hero
+document.addEventListener("DOMContentLoaded", () => {
+  const line1 = "Esculpiendo el futuro de la";
+  const line2 = "a través de la";
+
+  const el1 = document.getElementById("typed-text-1");
+  const el2 = document.getElementById("typed-text-2");
+  const glow1 = document.getElementById("glow-word-1");
+  const glow2 = document.getElementById("glow-word-2");
+  const fadeContent = document.getElementById("hero-fade-content");
+  const heroCta = document.getElementById("hero-cta");
+
+  if (!el1 || !el2 || !glow1 || !glow2) return;
+
+  let i = 0;
+  let j = 0;
+
+  function typeWriter1() {
+    if (i < line1.length) {
+      el1.textContent += line1.charAt(i);
+      i++;
+      setTimeout(typeWriter1, 45);
+    } else {
+      // Termina línea 1 -> Enciende Pedagogía
+      glow1.classList.remove("opacity-0");
+      glow1.classList.add("drop-shadow-[0_0_25px_rgba(255,215,0,0.8)]", "scale-105");
+      setTimeout(typeWriter2, 600);
+    }
+  }
+
+  function typeWriter2() {
+    if (j < line2.length) {
+      el2.textContent += line2.charAt(j);
+      j++;
+      setTimeout(typeWriter2, 45);
+    } else {
+      // Termina línea 2 -> Enciende Tecnología
+      glow2.classList.remove("opacity-0");
+      glow2.classList.add("drop-shadow-[0_0_25px_rgba(255,215,0,0.8)]", "scale-105");
+      
+      // Muestra el párrafo y el botón final suavemente
+      setTimeout(() => {
+        fadeContent.classList.remove("opacity-0");
+        heroCta.classList.remove("opacity-0");
+      }, 500);
+    }
+  }
+
+  // Iniciar la secuencia al cargar la página con un pequeño margen de 300ms
+  setTimeout(typeWriter1, 300);
+});
+
 // Lógica de Filtrado Multi-selección con validación de mínimo 1 activo
 const audienceButtons = document.querySelectorAll('.filter-btn-audience');
 const levelButtons = document.querySelectorAll('.filter-btn-level');
