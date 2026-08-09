@@ -1,17 +1,35 @@
 import './style.css';
 
-// Lógica del menú hamburguesa
+// 1. Lógica del menú hamburguesa con animación y deslizamiento
 const btn = document.getElementById('menu-btn');
 const menu = document.getElementById('mobile-menu');
 const links = document.querySelectorAll('.mobile-link');
 
-btn.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
-});
+function toggleMenu() {
+  btn.classList.toggle('is-active');
+  menu.classList.toggle('mobile-menu-closed');
+  menu.classList.toggle('mobile-menu-open');
+}
 
-// Cierra el menú automáticamente al hacer clic en una opción
+btn.addEventListener('click', toggleMenu);
+
 links.forEach(link => {
   link.addEventListener('click', () => {
-    menu.classList.add('hidden');
+    btn.classList.remove('is-active');
+    menu.classList.add('mobile-menu-closed');
+    menu.classList.remove('mobile-menu-open');
   });
+});
+
+// 2. Cambio de color del header al hacer scroll
+const header = document.getElementById('main-header');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('bg-interactive-dark/90', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-text-light/10');
+    header.classList.remove('bg-transparent');
+  } else {
+    header.classList.remove('bg-interactive-dark/90', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-text-light/10');
+    header.classList.add('bg-transparent');
+  }
 });

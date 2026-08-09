@@ -21,3 +21,33 @@
   --background-image-gradient-hero: linear-gradient(0deg, #111111 0%, #1B2631 54.79%, #566573 100%);
 }
 
+/* Menú mobile con deslizamiento por transformaciones (rápido y fluido en ambos sentidos) */
+.mobile-menu-closed {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Transformación simétrica y recta de la X usando flexbox */
+#menu-btn.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#menu-btn.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+#menu-btn.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
