@@ -23,6 +23,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Elimina el resaltado azul molesto al tocar elementos interactivos en Chrome/Safari móvil */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Menú mobile con deslizamiento por transformaciones (rápido y fluido en ambos sentidos) */
@@ -54,4 +56,38 @@ html {
 
 #menu-btn.is-active .hamburger-line:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   MICROINTERACCIONES GLOBALMENTE OPTIMIZADAS PARA MOBILE
+   ========================================================================== */
+
+/* 1. Feedback físico al presionar botones, enlaces principales y tarjetas */
+button, 
+a.btn, 
+.proposal-card, 
+.filter-btn-audience, 
+.filter-btn-level {
+  touch-action: manipulation; /* Previene el retraso de 300ms del doble-tap en navegación móvil */
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.15s ease, 
+              background-color 0.2s ease, 
+              box-shadow 0.2s ease;
+}
+
+/* Hundimiento sutil al toque (Tap Feedback) */
+button:active, 
+a:active, 
+.proposal-card:active {
+  transform: scale(0.97);
+}
+
+/* 2. Respetar preferencias de usuarios con movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

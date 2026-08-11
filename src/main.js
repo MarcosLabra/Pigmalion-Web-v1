@@ -48,6 +48,40 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// 6. Animación de revelado progresivo al scroolear (Scroll Reveal)
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll(".scroll-reveal");
+  if (!revealElements.length) return;
+
+  if ("IntersectionObserver" in window) {
+    // Aplicamos la invisibilidad inicial solo mediante JS si el observador es soportado
+    revealElements.forEach((el) => {
+      el.classList.add("opacity-0", "translate-y-8");
+    });
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0", "translate-y-8");
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -20px 0px",
+      },
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+  }
+}
+
+// Ejecución directa inmediata
+initScrollReveal();
+
 // 3. Secuencia de máquina de escribir y encendido en el Hero
 document.addEventListener("DOMContentLoaded", () => {
   const line1 = "Esculpiendo el futuro de la";
