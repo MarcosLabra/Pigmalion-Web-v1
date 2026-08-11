@@ -8,8 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>Pigmalión</title>
-    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-Y-m98Egf.js"></script>
-    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-B6rPhg05.css">
+    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-Blty7eFa.js"></script>
+    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-D1tFKSMc.css">
   </head>
 
   <body class="bg-surface-background font-body text-text-primary">
@@ -516,13 +516,13 @@
           <div class="flex flex-wrap justify-center gap-3" id="filter-audience">
             <button
               data-filter="docentes"
-              class="filter-btn-audience active w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-purple shadow-md text-text-light border-transparent text-center"
+              class="filter-btn-audience active w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-purple shadow-md text-text-light border-transparent text-center select-none"
             >
               Docentes
             </button>
             <button
               data-filter="familias"
-              class="filter-btn-audience active w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-purple shadow-md text-text-light border-transparent text-center"
+              class="filter-btn-audience active w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-purple shadow-md text-text-light border-transparent text-center select-none"
             >
               Familias
             </button>
@@ -532,25 +532,25 @@
           <div class="flex flex-wrap justify-center gap-3" id="filter-level">
             <button
               data-filter="inicial"
-              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
             >
               Inicial
             </button>
             <button
               data-filter="primaria"
-              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
             >
               Primaria
             </button>
             <button
               data-filter="secundaria"
-              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
             >
               Secundaria
             </button>
             <button
               data-filter="superior"
-              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-300 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center"
+              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
             >
               Superior
             </button>
@@ -563,7 +563,7 @@
             id="cards-container"
             class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 md:items-start gap-8 mb-12 justify-items-center"
           >
-            <!-- Las tarjetas se insertan dinámicamente desde el JS -->
+            <!-- Las tarjetas se insertan dinámicamente desde JS -->
           </div>
         </div>
 
@@ -582,7 +582,7 @@
         <div class="w-full flex justify-center">
           <a
             href="#contacto"
-            class="w-full max-w-md py-4 px-8 bg-interactive-yellow text-surface-black font-body font-bold text-base rounded-xl text-center hover:opacity-95 transition-all duration-300 shadow-lg"
+            class="w-full max-w-md py-4 px-8 bg-interactive-yellow text-surface-black font-body font-bold text-base rounded-xl text-center hover:opacity-95 active:scale-95 active:opacity-90 transition-all duration-150 shadow-lg"
           >
             Contactanos para empezar
           </a>
@@ -596,7 +596,7 @@
       class="relative py-24 px-8 md:px-16 lg:px-24 2xl:px-36 md:py-[80px] overflow-hidden bg-gradient-to-b from-surface-secondary via-interactive-dark to-surface-black text-text-light"
     >
       <div class="w-full max-w-7xl mx-auto flex flex-col items-start">
-        <!-- Cabecera de la Sección que abarca todo el ancho -->
+        <!-- Cabecera de la Sección (Fija) -->
         <div class="w-full text-left mb-12">
           <span
             class="text-interactive-yellow font-heading uppercase tracking-widest text-sm sm:text-base font-semibold block mb-3"
@@ -610,7 +610,7 @@
           </h2>
         </div>
 
-        <!-- Párrafo introductorio que abarca todo el ancho -->
+        <!-- Párrafo introductorio (Fijo) -->
         <div class="w-full text-left mb-16">
           <p
             class="font-body text-text-light text-base sm:text-lg 2xl:text-xl leading-relaxed"
@@ -627,22 +627,22 @@
 
         <!-- Perfil 1: Mario De Paolo -->
         <div
-          class="w-full max-w-7xl flex flex-col md:flex-row gap-8 items-start mb-20 mx-auto"
+          class="scroll-reveal w-full max-w-7xl flex flex-col md:flex-row gap-8 items-start mb-20 mx-auto transition-all duration-700 ease-out"
         >
-          <!-- Columna Foto -->
+          <!-- Columna Foto con Marco Fijo y Zoom Interno -->
           <div class="flex-shrink-0 mx-auto md:mx-0">
             <div
-              class="relative rounded-[20px] p-[1px] bg-gradient-to-b from-[#754595] to-[#9b51e0] shadow-[0_0_40px_rgba(117,69,149,0.7)]"
+              class="group relative rounded-[20px] p-[1px] bg-gradient-to-b from-[#754595] to-[#9b51e0] shadow-[0_0_40px_rgba(117,69,149,0.7)] hover:shadow-[0_0_50px_rgba(117,69,149,0.9)] active:scale-95 transition-all duration-300 overflow-hidden"
             >
               <img
                 src="/Pigmalion-Web-v1/assets/mario-CJP4vbYM.png"
                 alt="Mario De Paolo"
-                class="w-[225px] h-[338px] rounded-[19px] object-cover"
+                class="photo-zoom w-[225px] h-[338px] rounded-[19px] object-cover transition-transform duration-1000 ease-out scale-110 group-hover:scale-105"
               />
             </div>
           </div>
 
-          <!-- Columna Texto expandida -->
+          <!-- Columna Texto -->
           <div class="flex flex-col text-left flex-grow">
             <h3
               class="font-heading text-2xl sm:text-3xl 2xl:text-4xl font-bold text-text-light mb-4 text-center md:text-left"
@@ -676,9 +676,9 @@
 
         <!-- Perfil 2: Marcos Labra -->
         <div
-          class="w-full max-w-7xl flex flex-col md:flex-row gap-8 items-start mx-auto"
+          class="scroll-reveal w-full max-w-7xl flex flex-col md:flex-row gap-8 items-start mx-auto transition-all duration-700 ease-out"
         >
-          <!-- Columna Texto expandida -->
+          <!-- Columna Texto -->
           <div class="flex flex-col text-left flex-grow order-2 md:order-1">
             <h3
               class="font-heading text-2xl sm:text-3xl 2xl:text-4xl font-bold text-text-light mb-4 text-center md:text-left"
@@ -707,15 +707,15 @@
             </div>
           </div>
 
-          <!-- Columna Foto -->
+          <!-- Columna Foto con Marco Fijo y Zoom Interno -->
           <div class="flex-shrink-0 mx-auto md:mx-0 order-1 md:order-2">
             <div
-              class="relative rounded-[20px] p-[1px] bg-gradient-to-b from-[#754595] to-[#9b51e0] shadow-[0_0_40px_rgba(117,69,149,0.7)]"
+              class="group relative rounded-[20px] p-[1px] bg-gradient-to-b from-[#754595] to-[#9b51e0] shadow-[0_0_40px_rgba(117,69,149,0.7)] hover:shadow-[0_0_50px_rgba(117,69,149,0.9)] active:scale-95 transition-all duration-300 overflow-hidden"
             >
               <img
                 src="/Pigmalion-Web-v1/assets/marcos-DNIp2k0a.png"
                 alt="Marcos Labra"
-                class="w-[225px] h-[338px] rounded-[19px] object-cover"
+                class="photo-zoom w-[225px] h-[338px] rounded-[19px] object-cover transition-transform duration-1000 ease-out scale-110 group-hover:scale-105"
               />
             </div>
           </div>
@@ -730,7 +730,7 @@
       <div
         class="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-12 lg:gap-16"
       >
-        <!-- Columna Izquierda: Cabecera de la Sección -->
+        <!-- Columna Izquierda: Cabecera de la Sección (Fija) -->
         <div class="w-full md:w-1/2 text-left">
           <span
             class="text-interactive-yellow font-heading uppercase tracking-widest text-sm sm:text-base font-semibold block mb-3"
@@ -744,10 +744,10 @@
           </h2>
         </div>
 
-        <!-- Columna Derecha: Tarjeta de Experiencia -->
+        <!-- Columna Derecha: Tarjeta de Experiencia con Scroll Reveal -->
         <div class="w-full md:w-1/2 flex justify-center md:justify-end">
           <div
-            class="w-full max-w-[480px] bg-interactive-dark border-[0.5px] border-[#754595]/40 rounded-[24px] p-6 sm:p-8 2xl:p-10 flex flex-col items-start shadow-2xl"
+            class="scroll-reveal w-full max-w-[480px] bg-interactive-dark border-[0.5px] border-[#754595]/40 hover:border-[#754595]/80 rounded-[24px] p-6 sm:p-8 2xl:p-10 flex flex-col items-start shadow-2xl transition-all duration-700 ease-out active:scale-[0.99]"
           >
             <!-- Título del caso -->
             <h3
@@ -769,7 +769,9 @@
               class="w-full grid grid-cols-3 gap-2 bg-surface-black border border-text-light/5 rounded-xl p-3 mb-6 text-center shadow-inner"
             >
               <!-- Métrica 1 -->
-              <div class="flex flex-col items-center justify-center p-1">
+              <div
+                class="flex flex-col items-center justify-center p-1 rounded-lg active:scale-95 transition-transform duration-150 hover:bg-white/5 cursor-default"
+              >
                 <span
                   class="font-heading text-xl sm:text-2xl font-bold text-interactive-yellow mb-1"
                   >40</span
@@ -782,7 +784,7 @@
 
               <!-- Métrica 2 -->
               <div
-                class="flex flex-col items-center justify-center p-1 border-x border-text-light/10"
+                class="flex flex-col items-center justify-center p-1 border-x border-text-light/10 rounded-lg active:scale-95 transition-transform duration-150 hover:bg-white/5 cursor-default"
               >
                 <span
                   class="font-heading text-xl sm:text-2xl font-bold text-interactive-yellow mb-1"
@@ -795,7 +797,9 @@
               </div>
 
               <!-- Métrica 3 -->
-              <div class="flex flex-col items-center justify-center p-1">
+              <div
+                class="flex flex-col items-center justify-center p-1 rounded-lg active:scale-95 transition-transform duration-150 hover:bg-white/5 cursor-default"
+              >
                 <span
                   class="font-heading text-xl sm:text-2xl font-bold text-interactive-yellow mb-1"
                   >RAG</span
@@ -858,14 +862,14 @@
           </p>
         </div>
 
-        <!-- Columna Derecha: Botón CTA -->
+        <!-- Columna Derecha: Botón CTA con Microinteracción -->
         <div class="w-full md:w-1/2 flex justify-center md:justify-end">
           <div class="w-full max-w-md">
             <a
               href="https://calendar.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-full py-4 px-8 bg-interactive-yellow text-surface-black font-body font-bold text-base 2xl:text-lg rounded-xl text-center hover:opacity-95 transition-all duration-300 shadow-lg flex items-center justify-center"
+              class="w-full py-4 px-8 bg-interactive-yellow text-surface-black font-body font-bold text-base 2xl:text-lg rounded-xl text-center hover:opacity-95 active:scale-95 active:opacity-90 transition-all duration-150 shadow-lg flex items-center justify-center select-none"
             >
               Agendar una asesoría
             </a>
@@ -887,7 +891,10 @@
       >
         <!-- Columna Izquierda: Isologotipo y Subtítulo -->
         <div class="flex flex-col items-center md:items-start gap-2">
-          <a href="#" class="flex items-center">
+          <a
+            href="#"
+            class="flex items-center active:scale-95 transition-transform duration-150"
+          >
             <img
               src="/Pigmalion-Web-v1/assets/light-isologotipo-L6IBgPoY.svg"
               alt="Pigmalión - Consultoría estratégica e ingeniería digital"
@@ -900,36 +907,36 @@
           </p>
         </div>
 
-        <!-- Columna Derecha: Enlaces rápidos uno sobre otro -->
+        <!-- Columna Derecha: Enlaces rápidos uno sobre otro con touch targets amplios -->
         <div class="flex flex-col items-center md:items-end gap-3">
           <nav
-            class="flex flex-col items-center md:items-end gap-3 text-sm 2xl:text-base"
+            class="flex flex-col items-center md:items-end gap-2 text-sm 2xl:text-base"
           >
             <a
               href="#servicios"
-              class="hover:text-interactive-yellow transition-colors"
+              class="hover:text-interactive-yellow active:scale-95 transition-all duration-150 py-1 px-2 rounded-lg"
               >Servicios</a
             >
             <a
               href="#sobre-nosotros"
-              class="hover:text-interactive-yellow transition-colors"
+              class="hover:text-interactive-yellow active:scale-95 transition-all duration-150 py-1 px-2 rounded-lg"
               >Sobre nosotros</a
             >
             <a
               href="#experiencias"
-              class="hover:text-interactive-yellow transition-colors"
+              class="hover:text-interactive-yellow active:scale-95 transition-all duration-150 py-1 px-2 rounded-lg"
               >Experiencias</a
             >
             <a
               href="#contacto"
-              class="hover:text-interactive-yellow transition-colors"
+              class="hover:text-interactive-yellow active:scale-95 transition-all duration-150 py-1 px-2 rounded-lg"
               >Contacto</a
             >
           </nav>
         </div>
       </div>
 
-      <!-- Iconos de Redes Sociales Centrados en todo el footer -->
+      <!-- Iconos de Redes Sociales Centrados con Touch Target Accesible -->
       <div
         class="max-w-7xl mx-auto flex items-center justify-center gap-6 my-8"
       >
@@ -938,7 +945,7 @@
           href="https://instagram.com/tu-usuario"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-text-light hover:text-interactive-yellow transition-colors"
+          class="text-text-light hover:text-interactive-yellow active:scale-90 transition-all duration-150 p-2 rounded-xl"
           aria-label="Instagram"
         >
           <i class="fa-brands fa-instagram text-2xl"></i>
@@ -949,7 +956,7 @@
           href="https://wa.me/tu-numero"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-text-light hover:text-interactive-yellow transition-colors"
+          class="text-text-light hover:text-interactive-yellow active:scale-90 transition-all duration-150 p-2 rounded-xl"
           aria-label="WhatsApp"
         >
           <i class="fa-brands fa-whatsapp text-2xl"></i>
@@ -963,6 +970,7 @@
         &copy; 2026 Pigmalión. Todos los derechos reservados.
       </div>
     </footer>
+
     <!-- Script principal de Vite -->
   </body>
 </html>
