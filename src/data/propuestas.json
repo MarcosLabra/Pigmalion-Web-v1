@@ -1,0 +1,70 @@
+[
+  {
+    "id": "pantallas-infancia",
+    "audience": ["familias"],
+    "level": ["secundaria"],
+    "badges": [
+      { "label": "Inicial", "type": "yellow" },
+      { "label": "Familias", "type": "purple" }
+    ],
+    "title": "\"Pantallas en la Infancia: El Diseño del Entorno Digital Familiar\"",
+    "description": "Un taller de orientación para familias sobre el impacto del uso de dispositivos en el desarrollo infantil (3 a 5 años). A través de evidencia en neurociencia, pediatría y pautas de crianza, abordaremos:",
+    "items": [
+      {
+        "topic": "Salud y Neurodesarrollo",
+        "text": "Sueño, autorregulación, circuito de dopamina y movimiento."
+      },
+      {
+        "topic": "El Rol del Adulto",
+        "text": "Co-visión, prevención de la tecnoferencia y cómo gestionar berrinches sin la \"niñera digital\"."
+      },
+      {
+        "topic": "Plan Familiar de Tecnología",
+        "text": "Creación de zonas libres de pantallas, rutinas saludables y pautas de mediación."
+      },
+      {
+        "topic": "Espacio de Debate",
+        "text": "Intercambio abierto para resolver dudas y construir criterios de cuidado en el hogar."
+      }
+    ],
+    "details": {
+      "duration": "1 encuentro de 2hs",
+      "modality": "Virtual o presencial",
+      "deliverable": "Guía con propuestas para seguir trabajando lo visto en el taller"
+    }
+  },
+  {
+    "id": "ingenieria-prompts",
+    "audience": ["docentes"],
+    "level": ["inicial", "primaria", "secundaria", "superior"],
+    "badges": [
+      { "label": "Todos los niveles", "type": "yellow" },
+      { "label": "Docentes", "type": "purple" }
+    ],
+    "title": "\"Ingeniería de Prompts y Asistentes de IA para la Práctica Docente\"",
+    "description": "Un programa de formación intensivo para docentes enfocado en la adopción crítica y técnica de la Inteligencia Artificial en la planificación y gestión de aula. A través de un enfoque práctico y personalizado, trabajaremos:",
+    "items": [
+      {
+        "topic": "Ingeniería de Prompts Aplicada",
+        "text": "Estructuración de instrucciones efectivas y criterios de curaduría pedagógica para evitar alucinaciones."
+      },
+      {
+        "topic": "Personalización de Asistentes",
+        "text": "Configuración de la interfaz de Gemini adaptada al perfil, nivel y materia de cada educador."
+      },
+      {
+        "topic": "Arquitectura RAG Institucional",
+        "text": "Carga y estructuración de documentos curriculares (NAP, diseños de provincia) para consultas sobre fuentes propias."
+      },
+      {
+        "topic": "Flujos de Trabajo Eficientes",
+        "text": "Automatización de secuencias didácticas, instrumentos de evaluación y diseño de recursos educativos."
+      }
+    ],
+    "details": {
+      "duration": "3 encuentro de 2hs",
+      "modality": "Virtual o presencial",
+      "deliverable": "Repositorio RAG configurado y personalizado + Asistente Gemini adaptado a la práctica docente de cada participante"
+    }
+  }
+]

@@ -1,4 +1,5 @@
 import "./style.css";
+import propuestasData from "./data/propuestas.json";
 
 // 1. Lógica del menú hamburguesa con animación y deslizamiento
 const btn = document.getElementById("menu-btn");
@@ -11,7 +12,7 @@ function toggleMenu() {
   menu.classList.toggle("mobile-menu-open");
 }
 
-btn.addEventListener("click", toggleMenu);
+btn?.addEventListener("click", toggleMenu);
 
 links.forEach((link) => {
   link.addEventListener("click", () => {
@@ -25,6 +26,7 @@ links.forEach((link) => {
 const header = document.getElementById("main-header");
 
 window.addEventListener("scroll", () => {
+  if (!header) return;
   if (window.scrollY > 50) {
     header.classList.add(
       "bg-interactive-dark/90",
@@ -46,10 +48,10 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Secuencia de máquina de escribir y encendido en el Hero (20% más lenta)
+// 3. Secuencia de máquina de escribir y encendido en el Hero
 document.addEventListener("DOMContentLoaded", () => {
-  const line1 = "Esculpiendo el futuro de la"; // 27 caracteres
-  const line2 = "a través de la"; // 14 caracteres
+  const line1 = "Esculpiendo el futuro de la";
+  const line2 = "a través de la";
 
   const el1 = document.getElementById("typed-text-1");
   const el2 = document.getElementById("typed-text-2");
@@ -63,10 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let i = 0;
   let j = 0;
 
-  // Velocidades incrementadas un 20% en milisegundos (más lento = mayor número)
-  const speed1 = Math.round(45 * 1.2); // ~54 ms por carácter
+  const speed1 = Math.round(45 * 1.2);
   const baseSpeed2 = Math.floor((line1.length * 54) / line2.length);
-  const speed2 = Math.round(baseSpeed2 * 1.2); // Proporcional y 20% más lento
+  const speed2 = Math.round(baseSpeed2 * 1.2);
 
   function typeWriter1() {
     if (i < line1.length) {
@@ -74,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
       i++;
       setTimeout(typeWriter1, speed1);
     } else {
-      // Termina línea 1 -> Enciende Pedagogía (pausa un 20% más lenta: 720ms)
       glow1.classList.remove("opacity-0");
       glow1.classList.add(
         "drop-shadow-[0_0_25px_rgba(255,215,0,0.8)]",
@@ -90,34 +90,96 @@ document.addEventListener("DOMContentLoaded", () => {
       j++;
       setTimeout(typeWriter2, speed2);
     } else {
-      // Termina línea 2 -> Enciende Tecnología
       glow2.classList.remove("opacity-0");
       glow2.classList.add(
         "drop-shadow-[0_0_25px_rgba(255,215,0,0.8)]",
         "scale-105",
       );
 
-      // Muestra el párrafo y el botón final un 20% más lento (600ms)
       setTimeout(
         () => {
-          fadeContent.classList.remove("opacity-0");
-          heroCta.classList.remove("opacity-0");
+          fadeContent?.classList.remove("opacity-0");
+          heroCta?.classList.remove("opacity-0");
         },
         Math.round(500 * 1.2),
       );
     }
   }
 
-  // Iniciar la secuencia al cargar la página con un margen un 20% más lento (360ms)
   setTimeout(typeWriter1, Math.round(300 * 1.2));
 });
 
-// Lógica de Filtrado Multi-selección con validación de mínimo 1 activo
+// 4. Renderizado Dinámico de Propuestas Formativas
+function renderCards(data) {
+  const container = document.getElementById("cards-container");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  data.forEach((item) => {
+    const card = document.createElement("div");
+    card.className =
+      "proposal-card w-full bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 2xl:p-12 shadow-2xl transition-all duration-300";
+    card.setAttribute("data-audience", item.audience.join(" "));
+    card.setAttribute("data-level", item.level.join(" "));
+
+    const badgesHTML = item.badges
+      .map((b) => {
+        const bgClass =
+          b.type === "yellow"
+            ? "bg-interactive-yellow text-surface-black"
+            : "bg-interactive-purple text-text-light";
+        return `<span class="${bgClass} text-xs font-bold px-3 py-1 rounded-full">${b.label}</span>`;
+      })
+      .join("");
+
+    const listHTML = item.items
+      .map(
+        (i) => `
+      <li>
+        <strong>${i.topic}:</strong> ${i.text}
+      </li>
+    `,
+      )
+      .join("");
+
+    card.innerHTML = `
+      <div class="flex flex-wrap gap-2 mb-6">
+        ${badgesHTML}
+      </div>
+
+      <h3 class="font-heading text-2xl sm:text-3xl font-bold text-center mb-6 text-surface-black">
+        ${item.title}
+      </h3>
+
+      <p class="font-body text-text-secondary text-base mb-6 leading-relaxed">
+        ${item.description}
+      </p>
+
+      <ul class="list-disc list-inside space-y-2 text-text-secondary text-sm sm:text-base mb-8">
+        ${listHTML}
+      </ul>
+
+      <div class="border-t border-text-secondary/20 pt-6 space-y-2 text-sm sm:text-base text-text-secondary">
+        <p><strong>Duracion:</strong> ${item.details.duration}</p>
+        <p><strong>Modalidad:</strong> ${item.details.modality}</p>
+        <p><strong>Entregable:</strong> ${item.details.deliverable}</p>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+// Renderizar tarjetas de inmediato
+renderCards(propuestasData);
+
+// 5. Lógica de Filtrado Multi-selección con validación de mínimo 1 activo
 const audienceButtons = document.querySelectorAll(".filter-btn-audience");
 const levelButtons = document.querySelectorAll(".filter-btn-level");
-const cards = document.querySelectorAll(".proposal-card");
 
 function filterCards() {
+  const cards = document.querySelectorAll(".proposal-card");
   const activeAudiences = Array.from(
     document.querySelectorAll(".filter-btn-audience.active"),
   ).map((btn) => btn.getAttribute("data-filter"));
@@ -126,10 +188,12 @@ function filterCards() {
   ).map((btn) => btn.getAttribute("data-filter"));
 
   cards.forEach((card) => {
-    const cardAudience = card.getAttribute("data-audience");
+    const cardAudience = card.getAttribute("data-audience").split(" ");
     const cardLevels = card.getAttribute("data-level").split(" ");
 
-    const matchesAudience = activeAudiences.includes(cardAudience);
+    const matchesAudience = activeAudiences.some((a) =>
+      cardAudience.includes(a),
+    );
     const matchesLevel = cardLevels.some((l) => activeLevels.includes(l));
 
     if (matchesAudience && matchesLevel) {
@@ -149,7 +213,6 @@ function setupStrictToggleFilter(buttons, activeBgClass, inactiveBgClass) {
         b.classList.contains("active"),
       ).length;
 
-      // Si intenta apagar el último botón activo de este grupo, se cancela la acción
       if (btn.classList.contains("active") && activeCount === 1) {
         return;
       }
