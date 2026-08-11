@@ -2,7 +2,7 @@
   {
     "id": "pantallas-infancia",
     "audience": ["familias"],
-    "level": ["secundaria"],
+    "level": ["inicial"],
     "badges": [
       { "label": "Inicial", "type": "yellow" },
       { "label": "Familias", "type": "purple" }

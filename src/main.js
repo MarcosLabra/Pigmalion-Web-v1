@@ -48,13 +48,12 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// 6. Animación de revelado progresivo al scroolear (Scroll Reveal)
+// 6. Animación de revelado progresivo + Zoom interno en fotos
 function initScrollReveal() {
   const revealElements = document.querySelectorAll(".scroll-reveal");
   if (!revealElements.length) return;
 
   if ("IntersectionObserver" in window) {
-    // Aplicamos la invisibilidad inicial solo mediante JS si el observador es soportado
     revealElements.forEach((el) => {
       el.classList.add("opacity-0", "translate-y-8");
     });
@@ -65,12 +64,20 @@ function initScrollReveal() {
           if (entry.isIntersecting) {
             entry.target.classList.remove("opacity-0", "translate-y-8");
             entry.target.classList.add("opacity-100", "translate-y-0");
+
+            // Si el contenedor tiene una foto interna con .photo-zoom, activa la escala normal
+            const photo = entry.target.querySelector(".photo-zoom");
+            if (photo) {
+              photo.classList.remove("scale-110");
+              photo.classList.add("scale-100");
+            }
+
             obs.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.1,
+        threshold: 0.15,
         rootMargin: "0px 0px -20px 0px",
       },
     );
@@ -79,7 +86,6 @@ function initScrollReveal() {
   }
 }
 
-// Ejecución directa inmediata
 initScrollReveal();
 
 // 3. Secuencia de máquina de escribir y encendido en el Hero
