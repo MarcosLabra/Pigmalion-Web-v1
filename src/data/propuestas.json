@@ -1,36 +1,122 @@
 [
   {
-    "id": "pantallas-infancia",
+    "id": "tecnologias-infancia-habitos-saludables",
     "audience": ["familias"],
     "level": ["inicial"],
     "badges": [
-      { "label": "Inicial", "type": "yellow" },
-      { "label": "Familias", "type": "purple" }
+      {
+        "label": "Inicial",
+        "type": "yellow"
+      },
+      {
+        "label": "Familias",
+        "type": "purple"
+      }
     ],
-    "title": "\"Pantallas en la Infancia: El Diseño del Entorno Digital Familiar\"",
-    "description": "Un taller de orientación para familias sobre el impacto del uso de dispositivos en el desarrollo infantil (3 a 5 años). A través de evidencia en neurociencia, pediatría y pautas de crianza, abordaremos:",
+    "title": "\"Tecnologías en la infancia: acompañar, cuidar y construir hábitos saludables\"",
+    "description": "Una charla para familias de Nivel Inicial sobre cómo acompañar el uso de tecnologías desde una mirada integral (contenidos, contextos, momentos, vínculos, hábitos, autonomía y bienestar) y gestionar la tecnología sin convertirla únicamente en una prohibición o una recompensa.",
     "items": [
       {
-        "topic": "Salud y Neurodesarrollo",
-        "text": "Sueño, autorregulación, circuito de dopamina y movimiento."
+        "topic": "Mirada Integral y Entorno Digital",
+        "text": "Oportunidades, desafíos y elementos clave: qué, para qué, cuándo, dónde y con quién."
       },
       {
-        "topic": "El Rol del Adulto",
-        "text": "Co-visión, prevención de la tecnoferencia y cómo gestionar berrinches sin la \"niñera digital\"."
+        "topic": "Acompañamiento Adulto y Ejemplo",
+        "text": "Construcción progresiva de autonomía, selección de contenidos adecuados y el rol del ejemplo adulto en los hábitos familiares."
       },
       {
-        "topic": "Plan Familiar de Tecnología",
-        "text": "Creación de zonas libres de pantallas, rutinas saludables y pautas de mediación."
+        "topic": "Gestión de Límites y Conflictos",
+        "text": "Estrategias concretas para establecer límites sin reducir todo a 'sacar la pantalla', abordando momentos cotidianos (comidas, descanso, juego) y situaciones complejas como el apagar los dispositivos."
       },
       {
-        "topic": "Espacio de Debate",
-        "text": "Intercambio abierto para resolver dudas y construir criterios de cuidado en el hogar."
+        "topic": "Uso Significativo y Criterios",
+        "text": "La tecnología como entretenimiento, aprendizaje e interacción, junto con criterios para evaluar si una experiencia es adecuada."
       }
     ],
     "details": {
-      "duration": "1 encuentro de 2hs",
+      "duration": "1 encuentro de 2 horas",
       "modality": "Virtual o presencial",
-      "deliverable": "Guía con propuestas para seguir trabajando lo visto en el taller"
+      "deliverable": "Guía práctica para familias, Acuerdo familiar de uso de tecnologías, Checklist 'Antes de ofrecer una pantalla', Guía de estrategias para situaciones cotidianas y Ficha 'No se trata solo del tiempo'."
+    }
+  },
+  {
+    "id": "crear-con-ia-nivel-inicial",
+    "audience": ["docentes"],
+    "level": ["inicial"],
+    "badges": [
+      {
+        "label": "Inicial",
+        "type": "yellow"
+      },
+      {
+        "label": "Docentes",
+        "type": "purple"
+      }
+    ],
+    "title": "\"Crear con IA: contenidos para Nivel Inicial\"",
+    "description": "Un encuentro sobre herramientas y estrategias para utilizar la Inteligencia Artificial de manera crítica, creativa y pedagógica en el Nivel Inicial, poniendo la intencionalidad docente en el centro para diseñar, adaptar y enriquecer propuestas educativas.",
+    "items": [
+      {
+        "topic": "Fundamentos y Uso Responsable",
+        "text": "Qué es la IA, posibilidades, límites en el Nivel Inicial, autoría, privacidad y la IA como asistente sin reemplazar el criterio pedagógico."
+      },
+      {
+        "topic": "Ingeniería de Prompts",
+        "text": "Escribir instrucciones efectivas para obtener mejores resultados y adaptar contenidos según las edades y necesidades del grupo."
+      },
+      {
+        "topic": "Generación de Recursos Educativos",
+        "text": "Creación de cuentos, relatos, actividades, secuencias, proyectos, imágenes y recursos visuales adecuados para niños y niñas."
+      },
+      {
+        "topic": "Criterio y Validación Pedagógica",
+        "text": "Cómo evaluar, revisar, corregir y transformar los resultados producidos por la IA en propuestas de calidad."
+      }
+    ],
+    "details": {
+      "duration": "2 encuentros de 2 horas",
+      "modality": "Virtual o presencial",
+      "deliverable": "Guía práctica de IA para docentes, Banco de prompts educativos, Kit de creación de contenidos, Plantilla para diseñar propuestas con IA y Mini desafío práctico."
+    }
+  },
+  {
+    "id": "ciudadania-digital-ninez",
+    "audience": ["familias"],
+    "level": ["primaria"],
+    "badges": [
+      {
+        "label": "Primaria",
+        "type": "yellow"
+      },
+      {
+        "label": "Familias",
+        "type": "purple"
+      }
+    ],
+    "title": "\"Ciudadanía digital en la niñez: Acompañar a nuestros hijos en el mundo digital\"",
+    "description": "Un encuentro orientado a brindar herramientas a las familias del Nivel Primario para acompañar de manera progresiva el desarrollo de la autonomía digital de niños y niñas, promoviendo criterios para un uso responsable, seguro, saludable y participativo de la tecnología.",
+    "items": [
+      {
+        "topic": "Ciudadanía y Autonomía Digital",
+        "text": "Conceptos clave para aprender a convivir en internet y pautas para determinar cuándo están preparados para desenvolverse solos."
+      },
+      {
+        "topic": "Seguridad, Privacidad y Riesgos",
+        "text": "Protección de datos, contraseñas, huella digital, contactos desconocidos, contenidos inapropiados y prevención del cyberbullying."
+      },
+      {
+        "topic": "Plataformas, Redes y Consumo Digital",
+        "text": "Uso de videojuegos, redes sociales, convivencia respetuosa y la influencia de la publicidad e influencers en la niñez."
+      },
+      {
+        "topic": "El Rol Adulto y Acuerdos Familiares",
+        "text": "Cómo equilibrar el acompañamiento sin invadir, establecer límites sin aislar y construir acuerdos familiares sobre la tecnología."
+      }
+    ],
+    "details": {
+      "duration": "1 encuentro de 2 horas",
+      "modality": "Virtual o presencial",
+      "deliverable": "Guía para familias: Ciudadanía Digital, Checklist de seguridad digital, Acuerdo familiar de ciudadanía digital, Guía para conversar sobre situaciones digitales y Mapa de autonomía digital."
     }
   },
   {
@@ -42,29 +128,109 @@
       { "label": "Docentes", "type": "purple" }
     ],
     "title": "\"Ingeniería de Prompts y Asistentes de IA para la Práctica Docente\"",
-    "description": "Un programa de formación intensivo para docentes enfocado en la adopción crítica y técnica de la Inteligencia Artificial en la planificación y gestión de aula. A través de un enfoque práctico y personalizado, trabajaremos:",
+    "description": "Una formación práctica para aprender a pasar de usar la IA como herramienta genérica a construir asistentes personalizados, capaces de trabajar con necesidades, contenidos y documentos propios de cada docente e institución de manera crítica, estratégica y responsable.",
     "items": [
       {
         "topic": "Ingeniería de Prompts Aplicada",
-        "text": "Estructuración de instrucciones efectivas y criterios de curaduría pedagógica para evitar alucinaciones."
+        "text": "Construcción de instrucciones claras, estructuradas y contextualizadas, junto con criterios para revisar y validar las respuestas de la IA."
       },
       {
-        "topic": "Personalización de Asistentes",
-        "text": "Configuración de la interfaz de Gemini adaptada al perfil, nivel y materia de cada educador."
+        "topic": "Creación y Personalización de Asistentes",
+        "text": "Configuración de asistentes adaptados al perfil, nivel educativo y área, definiendo su propósito, comportamiento, tono y forma de trabajo."
       },
       {
-        "topic": "Arquitectura RAG Institucional",
-        "text": "Carga y estructuración de documentos curriculares (NAP, diseños de provincia) para consultas sobre fuentes propias."
+        "topic": "Trabajo con Documentos Propios",
+        "text": "Incorporación y organización de diseños curriculares, proyectos y materiales institucionales para consultas basadas en fuentes propias."
       },
       {
-        "topic": "Flujos de Trabajo Eficientes",
-        "text": "Automatización de secuencias didácticas, instrumentos de evaluación y diseño de recursos educativos."
+        "topic": "Flujos de Trabajo y Mirada Crítica",
+        "text": "Diseño de procesos para planificación, evaluación y recursos, abordando sesgos, información inventada y límites de la tecnología."
       }
     ],
     "details": {
-      "duration": "3 encuentro de 2hs",
+      "duration": "3 encuentros de 2 horas",
       "modality": "Virtual o presencial",
-      "deliverable": "Repositorio RAG configurado y personalizado + Asistente Gemini adaptado a la práctica docente de cada participante"
+      "deliverable": "Asistente de IA personalizado, Base documental personalizada, Repositorio de prompts docentes, Flujos de trabajo diseñados y Guía de uso y criterios de validación."
+    }
+  },
+  {
+    "id": "ia-etica-aprendizaje-nivel-secundario",
+    "audience": ["docentes"],
+    "level": ["secundaria"],
+    "badges": [
+      {
+        "label": "Secundaria",
+        "type": "yellow"
+      },
+      {
+        "label": "Docentes",
+        "type": "purple"
+      }
+    ],
+    "title": "\"IA y Ética Docente: Cómo Guiar el Aprendizaje en la Secundaria\"",
+    "description": "Un encuentro para docentes de Nivel Secundario con foco en formar estudiantes autónomos, enseñándoles a utilizar la IA de manera crítica y consciente para investigar, practicar y crear, sin reemplazar su propio proceso de pensamiento ni comprometer la autoría y transparencia de sus producciones.",
+    "items": [
+      {
+        "topic": "Hábitos Adolescentes y Uso Responsable",
+        "text": "Análisis de cómo los estudiantes usan la IA (ayuda vs. reemplazo), sentido de la autoría y las diferencias entre copiar, reformular, generar y producir."
+      },
+      {
+        "topic": "Pensamiento Crítico y Verificación",
+        "text": "Estrategias para enseñar a cuestionar y validar información generada por IA, reconociendo errores, sesgos, respuestas inventadas y privacidad de datos."
+      },
+      {
+        "topic": "Diseño Didáctico y Evaluación",
+        "text": "Consignas que promueven el pensamiento propio, enfoque en evaluar el proceso de aprendizaje y no solo el producto terminado."
+      },
+      {
+        "topic": "Diálogo y Acuerdos en el Aula",
+        "text": "Estrategias para conversar sobre ética con los estudiantes sin reducirlo a prohibiciones, construyendo normas y acuerdos compartidos para trabajos y tareas."
+      }
+    ],
+    "details": {
+      "duration": "1 encuentro de 2 horas",
+      "modality": "Virtual o presencial",
+      "deliverable": "Guía docente: IA y aprendizaje responsable, Semáforo del uso de IA, Acuerdo de uso responsable de IA, Guía para verificar respuestas de IA, Banco de consignas para trabajar con IA y Estrategias para evaluar el proceso."
+    }
+  },
+  {
+    "id": "etica-ia-educacion-superior",
+    "audience": ["docentes"],
+    "level": ["superior"],
+    "badges": [
+      {
+        "label": "Superior",
+        "type": "yellow"
+      },
+      {
+        "label": "Docentes",
+        "type": "purple"
+      }
+    ],
+    "title": "\"Ética e Inteligencia Artificial en la Educación Superior\"",
+    "description": "Un encuentro de reflexión y trabajo para docentes de Nivel Superior orientado a comprender los desafíos éticos de la IA (autoría, evaluación, privacidad, sesgos, transparencia y brechas de acceso) y construir criterios pedagógicos fundamentados e institucionales para integrar la tecnología sin perder el propósito educativo.",
+    "items": [
+      {
+        "topic": "Ética, Integridad Académica y Autoría",
+        "text": "Análisis de la producción intelectual, nuevas formas de plagio, transparencia al declarar el uso de IA y uso ético en la enseñanza."
+      },
+      {
+        "topic": "Transformación de la Evaluación",
+        "text": "Repensar qué y cómo se evalúa realmente frente a la IA, y cómo diseñar actividades en torno al debate 'prohibir, permitir o enseñar a utilizar'."
+      },
+      {
+        "topic": "Sesgos, Datos y Privacidad",
+        "text": "La IA como fuente no neutral (errores, respuestas inventadas y sesgos), protección de datos de estudiantes/docentes y uso responsable de datos institucionales."
+      },
+      {
+        "topic": "Acuerdos Institucionales y Criterios",
+        "text": "Herramientas para definir políticas de cátedra, competencias profesionales necesarias y análisis de casos concretos de la práctica superior."
+      }
+    ],
+    "details": {
+      "duration": "1 encuentro de 2 horas",
+      "modality": "Virtual o presencial",
+      "deliverable": "Guía de ética e IA para docentes de Nivel Superior, Matriz para la toma de decisiones, Modelo de política de uso de IA, Declaración de uso de IA y Casos para discusión."
     }
   }
 ]
