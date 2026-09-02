@@ -24,6 +24,9 @@
     #1b2631 54.79%,
     #566573 100%
   );
+
+  --color-surface-card: #1a1a1a;
+  --color-interactive-purple-light: #9b51e0;
 }
 
 html {
@@ -106,4 +109,10 @@ a:active,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Accesibilidad: Estilos globales de focus-visible para navegación por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-interactive-yellow);
+  outline-offset: 2px;
 }
