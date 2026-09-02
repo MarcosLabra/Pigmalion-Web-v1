@@ -4,6 +4,140 @@ export function initCards() {
   const container = document.getElementById("cards-container");
   if (!container) return;
 
+  function initCarousel() {
+    const prevBtn = document.getElementById("carousel-prev");
+    const nextBtn = document.getElementById("carousel-next");
+    const dotsContainer = document.getElementById("carousel-dots");
+
+    function getVisibleCards() {
+      return Array.from(
+        container.querySelectorAll(".proposal-card:not(.hidden)"),
+      );
+    }
+
+    function updateCarouselPadding() {
+      if (window.innerWidth >= 1024) {
+        container.style.paddingLeft = "0px";
+        container.style.paddingRight = "0px";
+        return;
+      }
+      const visibleCards = getVisibleCards();
+      if (visibleCards.length === 0) return;
+
+      const cardWidth = visibleCards[0].offsetWidth;
+      const sidePadding = (container.clientWidth - cardWidth) / 2;
+
+      container.style.paddingLeft = `${sidePadding}px`;
+      container.style.paddingRight = `${sidePadding}px`;
+    }
+
+    function getActiveCardIndex() {
+      const visibleCards = getVisibleCards();
+      if (visibleCards.length === 0) return 0;
+
+      const containerCenter = container.scrollLeft + container.clientWidth / 2;
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      visibleCards.forEach((card, index) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const distance = Math.abs(containerCenter - cardCenter);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      return closestIndex;
+    }
+
+    function scrollToCard(index) {
+      const visibleCards = getVisibleCards();
+      if (!visibleCards[index]) return;
+
+      const card = visibleCards[index];
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const targetScroll = cardCenter - container.clientWidth / 2;
+
+      container.scrollTo({
+        left: targetScroll,
+        behavior: "smooth",
+      });
+    }
+
+    function renderDots() {
+      if (!dotsContainer) return;
+      const visibleCards = getVisibleCards();
+      dotsContainer.innerHTML = "";
+
+      if (window.innerWidth >= 1024 || visibleCards.length <= 1) return;
+
+      visibleCards.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.className = `w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+          index === getActiveCardIndex()
+            ? "bg-interactive-yellow w-6"
+            : "bg-text-light/30"
+        }`;
+        dot.setAttribute("aria-label", `Ir a propuesta ${index + 1}`);
+        dot.addEventListener("click", () => scrollToCard(index));
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateActiveState() {
+      const activeIndex = getActiveCardIndex();
+      const visibleCards = getVisibleCards();
+
+      if (prevBtn) prevBtn.disabled = activeIndex === 0;
+      if (nextBtn) nextBtn.disabled = activeIndex === visibleCards.length - 1;
+
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll("button");
+        dots.forEach((dot, idx) => {
+          if (idx === activeIndex) {
+            dot.className =
+              "w-6 h-2.5 rounded-full bg-interactive-yellow transition-all duration-300";
+          } else {
+            dot.className =
+              "w-2.5 h-2.5 rounded-full bg-text-light/30 transition-all duration-300";
+          }
+        });
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.onclick = () => {
+        const currentIndex = getActiveCardIndex();
+        if (currentIndex > 0) scrollToCard(currentIndex - 1);
+      };
+    }
+
+    if (nextBtn) {
+      nextBtn.onclick = () => {
+        const visibleCards = getVisibleCards();
+        const currentIndex = getActiveCardIndex();
+        if (currentIndex < visibleCards.length - 1)
+          scrollToCard(currentIndex + 1);
+      };
+    }
+
+    container.onscroll = () => {
+      window.requestAnimationFrame(updateActiveState);
+    };
+
+    window.onresize = () => {
+      updateCarouselPadding();
+      renderDots();
+      updateActiveState();
+    };
+
+    updateCarouselPadding();
+    renderDots();
+    updateActiveState();
+  }
+
   function renderCards(data) {
     container.innerHTML = "";
 
@@ -11,7 +145,7 @@ export function initCards() {
       const card = document.createElement("div");
 
       card.className =
-        "proposal-card w-full bg-interactive-dark/80 border border-text-light/10 hover:border-interactive-purple/60 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_25px_rgba(117,69,149,0.25)] flex flex-col justify-between group";
+        "proposal-card snap-center shrink-0 w-[90%] sm:w-[75%] md:w-[70%] lg:w-auto h-auto bg-interactive-dark/80 border border-text-light/10 hover:border-interactive-purple/60 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_25px_rgba(117,69,149,0.25)] flex flex-col group";
 
       card.setAttribute("data-audience", item.audience.join(" "));
       card.setAttribute("data-level", item.level.join(" "));
@@ -27,27 +161,29 @@ export function initCards() {
         .join("");
 
       card.innerHTML = `
-        <div>
-          <div class="flex flex-wrap gap-2 mb-4">
-            ${badgesHTML}
+        <div class="flex flex-col flex-1 justify-between">
+          <div>
+            <div class="flex flex-wrap gap-2 mb-4">
+              ${badgesHTML}
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-text-light mb-3 group-hover:text-interactive-yellow transition-colors">
+              ${item.title}
+            </h3>
+
+            <p class="font-body text-text-light/80 text-sm line-clamp-3 mb-8 leading-relaxed">
+              ${item.description}
+            </p>
           </div>
 
-          <h3 class="font-heading text-xl font-bold text-text-light mb-3 group-hover:text-interactive-yellow transition-colors">
-            ${item.title}
-          </h3>
-
-          <p class="font-body text-text-light/80 text-sm line-clamp-3 mb-6 leading-relaxed">
-            ${item.description}
-          </p>
-        </div>
-
-        <div class="pt-4 border-t border-text-light/10 flex items-center justify-between text-xs font-body text-interactive-yellow">
-          <span class="flex items-center gap-1.5 font-medium">
-            ⏱️ ${item.details.duration}
-          </span>
-          <span class="font-bold underline underline-offset-4 group-hover:translate-x-1 transition-transform">
-            Ver detalle &rarr;
-          </span>
+          <div class="pt-4 border-t border-text-light/10 flex items-center justify-between gap-2 text-xs font-body text-interactive-yellow mt-auto">
+            <span class="flex items-center gap-1.5 font-medium whitespace-nowrap">
+              ⏱️ ${item.details.duration}
+            </span>
+            <span class="font-bold underline underline-offset-4 shrink-0 whitespace-nowrap group-hover:translate-x-1 transition-transform">
+              Ver detalle &rarr;
+            </span>
+          </div>
         </div>
       `;
 
@@ -58,6 +194,8 @@ export function initCards() {
       });
       container.appendChild(card);
     });
+
+    initCarousel();
   }
 
   renderCards(propuestasData);
@@ -68,11 +206,11 @@ export function initCards() {
   function filterCards() {
     const cards = document.querySelectorAll(".proposal-card");
     const activeAudiences = Array.from(
-      document.querySelectorAll(".filter-btn-audience.active")
+      document.querySelectorAll(".filter-btn-audience.active"),
     ).map((btn) => btn.getAttribute("data-filter"));
 
     const activeLevels = Array.from(
-      document.querySelectorAll(".filter-btn-level.active")
+      document.querySelectorAll(".filter-btn-level.active"),
     ).map((btn) => btn.getAttribute("data-filter"));
 
     cards.forEach((card) => {
@@ -80,7 +218,7 @@ export function initCards() {
       const cardLevels = card.getAttribute("data-level").split(" ");
 
       const matchesAudience = activeAudiences.some((a) =>
-        cardAudience.includes(a)
+        cardAudience.includes(a),
       );
       const matchesLevel = cardLevels.some((l) => activeLevels.includes(l));
 
@@ -98,13 +236,17 @@ export function initCards() {
         }, 300);
       }
     });
+
+    setTimeout(() => {
+      initCarousel();
+    }, 310);
   }
 
   function setupStrictToggleFilter(buttons, activeBgClass, inactiveBgClass) {
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
         const activeCount = Array.from(buttons).filter((b) =>
-          b.classList.contains("active")
+          b.classList.contains("active"),
         ).length;
 
         if (btn.classList.contains("active") && activeCount === 1) {
@@ -129,21 +271,20 @@ export function initCards() {
   setupStrictToggleFilter(
     audienceButtons,
     "bg-interactive-purple shadow-md text-text-light border-transparent",
-    "bg-interactive-purple/40 border border-interactive-purple/60 text-text-light/80"
+    "bg-interactive-purple/40 border border-interactive-purple/60 text-text-light/80",
   );
 
   setupStrictToggleFilter(
     levelButtons,
     "bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow",
-    "bg-interactive-yellow/20 border border-interactive-yellow text-interactive-yellow"
+    "bg-interactive-yellow/20 border border-interactive-yellow text-interactive-yellow",
   );
 
   const backToFiltersBtn = document.getElementById("btn-back-to-filters");
-  const cardsContainer = document.getElementById("cards-container");
 
-  if (backToFiltersBtn && cardsContainer) {
+  if (backToFiltersBtn && container) {
     function handleFloatingButtonVisibility() {
-      const rect = cardsContainer.getBoundingClientRect();
+      const rect = container.getBoundingClientRect();
       const isInsideCardsArea = rect.top < 0 && rect.bottom > 300;
 
       if (isInsideCardsArea) {
@@ -172,7 +313,8 @@ export function initCards() {
 
       const headerOffset = 100;
       const elementPosition = anchor.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
