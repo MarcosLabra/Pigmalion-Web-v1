@@ -1,24 +1,24 @@
 import "./style.css";
 import propuestasData from "./data/propuestas.json";
 
-// 1. Lógica del menú hamburguesa con animación y deslizamiento
+// 1. Lógica del menú hamburguesa
 const btn = document.getElementById("menu-btn");
 const menu = document.getElementById("mobile-menu");
 const links = document.querySelectorAll(".mobile-link");
 
 function toggleMenu() {
-  btn.classList.toggle("is-active");
-  menu.classList.toggle("mobile-menu-closed");
-  menu.classList.toggle("mobile-menu-open");
+  btn?.classList.toggle("is-active");
+  menu?.classList.toggle("mobile-menu-closed");
+  menu?.classList.toggle("mobile-menu-open");
 }
 
 btn?.addEventListener("click", toggleMenu);
 
 links.forEach((link) => {
   link.addEventListener("click", () => {
-    btn.classList.remove("is-active");
-    menu.classList.add("mobile-menu-closed");
-    menu.classList.remove("mobile-menu-open");
+    btn?.classList.remove("is-active");
+    menu?.classList.add("mobile-menu-closed");
+    menu?.classList.remove("mobile-menu-open");
   });
 });
 
@@ -48,7 +48,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// 6. Animación de revelado progresivo + Zoom interno en fotos
+// 3. Animación de revelado progresivo + Zoom interno en fotos
 function initScrollReveal() {
   const revealElements = document.querySelectorAll(".scroll-reveal");
   if (!revealElements.length) return;
@@ -65,7 +65,6 @@ function initScrollReveal() {
             entry.target.classList.remove("opacity-0", "translate-y-8");
             entry.target.classList.add("opacity-100", "translate-y-0");
 
-            // Si el contenedor tiene una foto interna con .photo-zoom, activa la escala normal
             const photo = entry.target.querySelector(".photo-zoom");
             if (photo) {
               photo.classList.remove("scale-110");
@@ -88,17 +87,29 @@ function initScrollReveal() {
 
 initScrollReveal();
 
-// 4. Renderizado Dinámico de Propuestas Formativas
 function renderCards(data) {
   const container = document.getElementById("cards-container");
   if (!container) return;
 
   container.innerHTML = "";
 
-  data.forEach((item) => {
+  const isMobile = window.innerWidth < 768;
+
+  data.forEach((item, index) => {
     const card = document.createElement("div");
+
+    // En mobile usaremos un offset superior más ajustado (70px + 12px por tarjeta)
+    // En desktop mantenemos (112px + 24px por tarjeta)
+    const baseTop = isMobile ? 70 : 112;
+    const step = isMobile ? 12 : 24;
+    const topOffset = baseTop + index * step;
+
     card.className =
-      "proposal-card w-full bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 2xl:p-12 shadow-2xl transition-all duration-300";
+      "proposal-card sticky w-full max-w-4xl lg:max-w-5xl 2xl:max-w-6xl p-[2px] rounded-[24px] sm:rounded-[32px] bg-[linear-gradient(135deg,#111111_0%,#754595_100%)] shadow-[0_-12px_30px_rgba(0,0,0,0.35)] transition-all duration-300 mb-[25vh] sm:mb-[35vh]";
+
+    card.style.top = `${topOffset}px`;
+    card.style.zIndex = (index + 10).toString();
+
     card.setAttribute("data-audience", item.audience.join(" "));
     card.setAttribute("data-level", item.level.join(" "));
 
@@ -108,7 +119,7 @@ function renderCards(data) {
           b.type === "yellow"
             ? "bg-interactive-yellow text-surface-black"
             : "bg-interactive-purple text-text-light";
-        return `<span class="${bgClass} text-xs font-bold px-3 py-1 rounded-full">${b.label}</span>`;
+        return `<span class="${bgClass} text-[10px] sm:text-xs font-bold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full">${b.label}</span>`;
       })
       .join("");
 
@@ -122,27 +133,30 @@ function renderCards(data) {
       )
       .join("");
 
+    // Padding optimizado: p-5 en móvil para reducir altura vertical
     card.innerHTML = `
-      <div class="flex flex-wrap gap-2 mb-6">
-        ${badgesHTML}
-      </div>
+      <div class="w-full h-full bg-surface-background text-text-primary rounded-[22px] sm:rounded-[30px] p-5 sm:p-10 2xl:p-12">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-6">
+          ${badgesHTML}
+        </div>
 
-      <h3 class="font-heading text-2xl sm:text-3xl font-bold text-center mb-6 text-surface-black">
-        ${item.title}
-      </h3>
+        <h3 class="font-heading text-xl sm:text-3xl font-bold text-center mb-3 sm:mb-6 text-surface-black">
+          ${item.title}
+        </h3>
 
-      <p class="font-body text-text-secondary text-base mb-6 leading-relaxed">
-        ${item.description}
-      </p>
+        <p class="font-body text-text-secondary text-sm sm:text-base mb-3 sm:mb-6 leading-relaxed">
+          ${item.description}
+        </p>
 
-      <ul class="list-disc list-inside space-y-2 text-text-secondary text-sm sm:text-base mb-8">
-        ${listHTML}
-      </ul>
+        <ul class="list-disc list-inside space-y-1 sm:space-y-2 text-text-secondary text-xs sm:text-base mb-4 sm:mb-8">
+          ${listHTML}
+        </ul>
 
-      <div class="border-t border-text-secondary/20 pt-6 space-y-2 text-sm sm:text-base text-text-secondary">
-        <p><strong>Duracion:</strong> ${item.details.duration}</p>
-        <p><strong>Modalidad:</strong> ${item.details.modality}</p>
-        <p><strong>Entregable:</strong> ${item.details.deliverable}</p>
+        <div class="border-t border-text-secondary/20 pt-4 sm:pt-6 space-y-1 sm:space-y-2 text-xs sm:text-base text-text-secondary">
+          <p><strong>Duración:</strong> ${item.details.duration}</p>
+          <p><strong>Modalidad:</strong> ${item.details.modality}</p>
+          <p><strong>Entregable:</strong> ${item.details.deliverable}</p>
+        </div>
       </div>
     `;
 
@@ -150,10 +164,9 @@ function renderCards(data) {
   });
 }
 
-// Renderizar tarjetas de inmediato
 renderCards(propuestasData);
 
-// 5. Lógica de Filtrado Multi-selección con validación de mínimo 1 activo
+// 5. Lógica de Filtrado Multi-selección
 const audienceButtons = document.querySelectorAll(".filter-btn-audience");
 const levelButtons = document.querySelectorAll(".filter-btn-level");
 
