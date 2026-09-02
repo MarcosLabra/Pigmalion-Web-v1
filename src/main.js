@@ -53,7 +53,6 @@ function initHeroFadeIn() {
   const heroItems = document.querySelectorAll(".hero-fade-item");
   if (!heroItems.length) return;
 
-  // Retraso mínimo para asegurar la inicialización completa del DOM
   setTimeout(() => {
     heroItems.forEach((el) => {
       el.classList.remove("opacity-0", "translate-y-6");
@@ -63,8 +62,10 @@ function initHeroFadeIn() {
 }
 
 document.addEventListener("DOMContentLoaded", initHeroFadeIn);
-// Fallback en caso de que DOMContentLoaded ya haya ocurrido
-if (document.readyState === "complete" || document.readyState === "interactive") {
+if (
+  document.readyState === "complete" ||
+  document.readyState === "interactive"
+) {
   initHeroFadeIn();
 }
 
@@ -107,7 +108,96 @@ function initScrollReveal() {
 
 initScrollReveal();
 
-// 4. Renderizado Dinámico de Propuestas Formativas
+// 4. Lógica Modal
+const modal = document.getElementById("modal-propuesta");
+const modalContent = document.getElementById("modal-content");
+const closeModalBtn = document.getElementById("close-modal");
+
+function openModal(item) {
+  if (!modal || !modalContent) return;
+
+  const badgesHTML = item.badges
+    .map((b) => {
+      const bgClass =
+        b.type === "yellow"
+          ? "bg-interactive-yellow text-surface-black"
+          : "bg-interactive-purple text-text-light";
+      return `<span class="${bgClass} text-xs font-bold px-3 py-1 rounded-full">${b.label}</span>`;
+    })
+    .join("");
+
+  const itemsHTML = item.items
+    .map(
+      (it) => `
+      <div class="p-4 rounded-xl bg-surface-black/30 border border-text-light/10">
+        <h5 class="font-heading font-bold text-interactive-yellow text-base mb-1">${it.topic}</h5>
+        <p class="font-body text-text-light/80 text-sm leading-relaxed">${it.text}</p>
+      </div>
+    `,
+    )
+    .join("");
+
+  modalContent.innerHTML = `
+    <div>
+      <div class="flex flex-wrap gap-2 mb-4">${badgesHTML}</div>
+      <h3 class="font-heading text-2xl sm:text-3xl font-bold text-text-light mb-4">
+        ${item.title}
+      </h3>
+      <p class="font-body text-text-light/90 text-base leading-relaxed mb-6">
+        ${item.description}
+      </p>
+    </div>
+
+    <div class="space-y-3">
+      <h4 class="font-heading text-lg font-semibold text-text-light">Ejes de trabajo</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        ${itemsHTML}
+      </div>
+    </div>
+
+    <div class="mt-4 p-5 rounded-xl bg-interactive-purple/20 border border-interactive-purple/40 space-y-2 text-sm font-body">
+      <p><strong class="text-interactive-yellow">Duración:</strong> ${item.details.duration}</p>
+      <p><strong class="text-interactive-yellow">Modalidad:</strong> ${item.details.modality}</p>
+      <p><strong class="text-interactive-yellow">Entregables:</strong> ${item.details.deliverable}</p>
+    </div>
+
+    <div class="pt-4 flex justify-end">
+      <a
+        href="#contacto"
+        id="modal-cta-btn"
+        class="w-full sm:w-auto px-6 py-3 bg-interactive-yellow text-surface-black font-body font-bold text-sm rounded-xl text-center hover:opacity-95 active:scale-95 transition-all"
+      >
+        Solicitar esta propuesta
+      </a>
+    </div>
+  `;
+
+  document
+    .getElementById("modal-cta-btn")
+    ?.addEventListener("click", closeModalFunc);
+
+  modal.classList.remove("hidden");
+  setTimeout(() => {
+    modal.classList.remove("opacity-0");
+  }, 10);
+  document.body.style.overflow = "hidden";
+}
+
+function closeModalFunc() {
+  if (!modal) return;
+  modal.classList.add("opacity-0");
+  setTimeout(() => {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "";
+  }, 300);
+}
+
+closeModalBtn?.addEventListener("click", closeModalFunc);
+modal?.addEventListener("click", (e) => {
+  if (e.target === modal) closeModalFunc();
+});
+
+// 5. Renderizado Dinámico de Propuestas Formativas (Cards Reducidas)
 function renderCards(data) {
   const container = document.getElementById("cards-container");
   if (!container) return;
@@ -118,7 +208,7 @@ function renderCards(data) {
     const card = document.createElement("div");
 
     card.className =
-      "proposal-card w-full h-full bg-surface-background text-text-primary rounded-[24px] p-6 sm:p-8 2xl:p-12 shadow-2xl transition-all duration-300 border border-black/5 flex flex-col justify-between";
+      "proposal-card w-full bg-interactive-dark/80 border border-text-light/10 hover:border-interactive-purple/60 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_25px_rgba(117,69,149,0.25)] flex flex-col justify-between group";
 
     card.setAttribute("data-audience", item.audience.join(" "));
     card.setAttribute("data-level", item.level.join(" "));
@@ -133,51 +223,39 @@ function renderCards(data) {
       })
       .join("");
 
-    const listHTML = item.items
-      .map(
-        (i) => `
-      <li>
-        <strong>${i.topic}:</strong> ${i.text}
-      </li>
-    `,
-      )
-      .join("");
-
     card.innerHTML = `
-      <div class="flex flex-col h-full justify-between">
-        <div>
-          <div class="flex flex-wrap gap-2 mb-6">
-            ${badgesHTML}
-          </div>
-
-          <h3 class="font-heading text-2xl sm:text-3xl font-bold text-center mb-6 text-surface-black">
-            ${item.title}
-          </h3>
-
-          <p class="font-body text-text-secondary text-base mb-6 leading-relaxed">
-            ${item.description}
-          </p>
-
-          <ul class="list-disc list-inside space-y-2 text-text-secondary text-sm sm:text-base mb-8">
-            ${listHTML}
-          </ul>
+      <div>
+        <div class="flex flex-wrap gap-2 mb-4">
+          ${badgesHTML}
         </div>
 
-        <div class="border-t border-text-secondary/20 pt-6 space-y-2 text-sm sm:text-base text-text-secondary mt-auto">
-          <p><strong>Duración:</strong> ${item.details.duration}</p>
-          <p><strong>Modalidad:</strong> ${item.details.modality}</p>
-          <p><strong>Entregable:</strong> ${item.details.deliverable}</p>
-        </div>
+        <h3 class="font-heading text-xl font-bold text-text-light mb-3 group-hover:text-interactive-yellow transition-colors">
+          ${item.title}
+        </h3>
+
+        <p class="font-body text-text-light/80 text-sm line-clamp-3 mb-6 leading-relaxed">
+          ${item.description}
+        </p>
+      </div>
+
+      <div class="pt-4 border-t border-text-light/10 flex items-center justify-between text-xs font-body text-interactive-yellow">
+        <span class="flex items-center gap-1.5 font-medium">
+          ⏱️ ${item.details.duration}
+        </span>
+        <span class="font-bold underline underline-offset-4 group-hover:translate-x-1 transition-transform">
+          Ver detalle &rarr;
+        </span>
       </div>
     `;
 
+    card.addEventListener("click", () => openModal(item));
     container.appendChild(card);
   });
 }
 
 renderCards(propuestasData);
 
-// 5. Lógica de Filtrado Multi-selección
+// 6. Lógica de Filtrado Multi-selección
 const audienceButtons = document.querySelectorAll(".filter-btn-audience");
 const levelButtons = document.querySelectorAll(".filter-btn-level");
 
@@ -248,7 +326,7 @@ setupStrictToggleFilter(
   "bg-interactive-yellow/20 border border-interactive-yellow text-interactive-yellow",
 );
 
-// 6. Botón Flotante para Volver a Filtros
+// 7. Botón Flotante para Volver a Filtros
 const backToFiltersBtn = document.getElementById("btn-back-to-filters");
 const cardsContainer = document.getElementById("cards-container");
 
@@ -288,8 +366,6 @@ function initServicesStacking() {
   if (!serviceCards.length) return;
 
   const isMobile = window.innerWidth < 768;
-
-  // Offsets progresivos para replicar la cascada exacta de OpenOnion
   const baseTop = isMobile ? 70 : 100;
   const step = isMobile ? 18 : 28;
 
