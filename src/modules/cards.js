@@ -11,7 +11,7 @@ export function initCards() {
 
     function getVisibleCards() {
       return Array.from(
-        container.querySelectorAll(".proposal-card:not(.hidden)"),
+        container.querySelectorAll(".proposal-card:not(.hidden)")
       );
     }
 
@@ -144,8 +144,9 @@ export function initCards() {
     data.forEach((item) => {
       const card = document.createElement("div");
 
+      // w-[82vw] asegura espacio amplio para textos en el centro sin apretar
       card.className =
-        "proposal-card snap-center shrink-0 w-[90%] sm:w-[75%] md:w-[70%] lg:w-auto h-auto bg-interactive-dark/80 border border-text-light/10 hover:border-interactive-purple/60 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_25px_rgba(117,69,149,0.25)] flex flex-col group";
+        "proposal-card snap-center shrink-0 w-[82vw] sm:w-[380px] lg:w-auto h-auto bg-interactive-dark/80 border border-text-light/10 hover:border-interactive-purple/60 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_25px_rgba(117,69,149,0.25)] flex flex-col group";
 
       card.setAttribute("data-audience", item.audience.join(" "));
       card.setAttribute("data-level", item.level.join(" "));
@@ -171,13 +172,13 @@ export function initCards() {
               ${item.title}
             </h3>
 
-            <p class="font-body text-text-light/80 text-sm line-clamp-3 mb-8 leading-relaxed">
+            <p class="font-body text-text-light/80 text-sm line-clamp-3 mb-6 leading-relaxed">
               ${item.description}
             </p>
           </div>
 
           <div class="pt-4 border-t border-text-light/10 flex items-center justify-between gap-2 text-xs font-body text-interactive-yellow mt-auto">
-            <span class="flex items-center gap-1.5 font-medium whitespace-nowrap">
+            <span class="flex items-center gap-1 font-medium whitespace-nowrap">
               ⏱️ ${item.details.duration}
             </span>
             <span class="font-bold underline underline-offset-4 shrink-0 whitespace-nowrap group-hover:translate-x-1 transition-transform">
@@ -206,11 +207,11 @@ export function initCards() {
   function filterCards() {
     const cards = document.querySelectorAll(".proposal-card");
     const activeAudiences = Array.from(
-      document.querySelectorAll(".filter-btn-audience.active"),
+      document.querySelectorAll(".filter-btn-audience.active")
     ).map((btn) => btn.getAttribute("data-filter"));
 
     const activeLevels = Array.from(
-      document.querySelectorAll(".filter-btn-level.active"),
+      document.querySelectorAll(".filter-btn-level.active")
     ).map((btn) => btn.getAttribute("data-filter"));
 
     cards.forEach((card) => {
@@ -218,7 +219,7 @@ export function initCards() {
       const cardLevels = card.getAttribute("data-level").split(" ");
 
       const matchesAudience = activeAudiences.some((a) =>
-        cardAudience.includes(a),
+        cardAudience.includes(a)
       );
       const matchesLevel = cardLevels.some((l) => activeLevels.includes(l));
 
@@ -246,7 +247,7 @@ export function initCards() {
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
         const activeCount = Array.from(buttons).filter((b) =>
-          b.classList.contains("active"),
+          b.classList.contains("active")
         ).length;
 
         if (btn.classList.contains("active") && activeCount === 1) {
@@ -271,13 +272,13 @@ export function initCards() {
   setupStrictToggleFilter(
     audienceButtons,
     "bg-interactive-purple shadow-md text-text-light border-transparent",
-    "bg-interactive-purple/40 border border-interactive-purple/60 text-text-light/80",
+    "bg-interactive-purple/40 border border-interactive-purple/60 text-text-light/80"
   );
 
   setupStrictToggleFilter(
     levelButtons,
     "bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow",
-    "bg-interactive-yellow/20 border border-interactive-yellow text-interactive-yellow",
+    "bg-interactive-yellow/20 border border-interactive-yellow text-interactive-yellow"
   );
 
   const backToFiltersBtn = document.getElementById("btn-back-to-filters");
@@ -291,7 +292,10 @@ export function initCards() {
         backToFiltersBtn.classList.remove("opacity-0", "pointer-events-none");
         backToFiltersBtn.classList.add("opacity-100", "pointer-events-auto");
       } else {
-        backToFiltersBtn.classList.remove("opacity-100", "pointer-events-auto");
+        backToFiltersBtn.classList.remove(
+          "opacity-100",
+          "pointer-events-auto"
+        );
         backToFiltersBtn.classList.add("opacity-0", "pointer-events-none");
       }
     }
