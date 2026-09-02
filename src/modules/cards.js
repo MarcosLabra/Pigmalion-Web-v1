@@ -199,6 +199,23 @@ export function initCards() {
     initCarousel();
   }
 
+  const filtersContainer = document.getElementById("filters-container");
+  const scrollHint = document.getElementById("filters-scroll-hint");
+
+  if (filtersContainer && scrollHint) {
+    filtersContainer.addEventListener(
+      "scroll",
+      () => {
+        if (filtersContainer.scrollLeft > 15) {
+          scrollHint.classList.add("opacity-0");
+        } else {
+          scrollHint.classList.remove("opacity-0");
+        }
+      },
+      { passive: true }
+    );
+  }
+  
   renderCards(propuestasData);
 
   const audienceButtons = document.querySelectorAll(".filter-btn-audience");
