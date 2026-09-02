@@ -8,8 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>Pigmalión</title>
-    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-BkhCbApQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-rnbiP8Do.css">
+    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-Bq6sXRPG.js"></script>
+    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-B_CEgoUP.css">
   </head>
 
   <body class="bg-surface-background font-body text-text-primary">
@@ -470,54 +470,54 @@
         </p>
       </div>
 
-      <!-- Contenido Principal -->
-      <div
-        class="relative z-10 flex flex-col items-start w-full max-w-6xl mt-8 pl-4 lg:pl-12 2xl:pl-20"
+      <!-- Contenido Principal con animación de entrada (Hero Fade-In) -->
+  <div
+    class="relative z-10 flex flex-col items-start w-full max-w-6xl mt-8 pl-4 lg:pl-12 2xl:pl-20"
+  >
+    <h2
+      class="hero-fade-item opacity-0 translate-y-6 transition-all duration-700 ease-out font-heading text-3xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-extrabold text-text-light leading-[1.2] tracking-normal mb-10 min-h-[200px] lg:min-h-[260px] 2xl:min-h-[320px] flex flex-col items-start justify-center text-left"
+    >
+      <span class="inline-block text-left w-full">
+        Esculpiendo el futuro de la
+      </span>
+
+      <span
+        id="glow-word-1"
+        class="text-interactive-yellow uppercase block mt-2 text-[1.3em] lg:text-[1.35em] 2xl:text-[1.4em] drop-shadow-[0_0_25px_rgba(255,215,0,0.8)] scale-105 text-left"
       >
-        <h2
-          class="font-heading text-3xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-extrabold text-text-light leading-[1.2] tracking-normal mb-10 min-h-[200px] lg:min-h-[260px] 2xl:min-h-[320px] flex flex-col items-start justify-center text-left"
-        >
-          <span class="inline-block text-left w-full">
-            Esculpiendo el futuro de la
-          </span>
+        Pedagogía
+      </span>
 
-          <span
-            id="glow-word-1"
-            class="text-interactive-yellow uppercase block mt-2 text-[1.3em] lg:text-[1.35em] 2xl:text-[1.4em] drop-shadow-[0_0_25px_rgba(255,215,0,0.8)] scale-105 text-left"
-          >
-            Pedagogía
-          </span>
+      <span class="inline-block mt-3 text-left w-full">
+        a través de la
+      </span>
 
-          <span class="inline-block mt-3 text-left w-full">
-            a través de la
-          </span>
+      <span
+        id="glow-word-2"
+        class="text-interactive-yellow uppercase block mt-2 text-[1.3em] lg:text-[1.35em] 2xl:text-[1.4em] drop-shadow-[0_0_25px_rgba(255,215,0,0.8)] scale-105 text-left"
+      >
+        Tecnología
+      </span>
+    </h2>
 
-          <span
-            id="glow-word-2"
-            class="text-interactive-yellow uppercase block mt-2 text-[1.3em] lg:text-[1.35em] 2xl:text-[1.4em] drop-shadow-[0_0_25px_rgba(255,215,0,0.8)] scale-105 text-left"
-          >
-            Tecnología
-          </span>
-        </h2>
+    <p
+      id="hero-fade-content"
+      class="hero-fade-item opacity-0 translate-y-6 transition-all duration-700 ease-out delay-150 font-body text-base sm:text-lg lg:text-xl 2xl:text-2xl text-text-light/90 leading-relaxed max-w-2xl lg:max-w-3xl 2xl:max-w-4xl mb-12 text-left"
+    >
+      Consultoría estratégica e ingeniería digital para instituciones
+      educativas. Transformamos la complejidad algorítmica en herramientas
+      con sentido humano.
+    </p>
 
-        <p
-          id="hero-fade-content"
-          class="font-body text-base sm:text-lg lg:text-xl 2xl:text-2xl text-text-light/90 leading-relaxed max-w-2xl lg:max-w-3xl 2xl:max-w-4xl mb-12 text-left"
-        >
-          Consultoría estratégica e ingeniería digital para instituciones
-          educativas. Transformamos la complejidad algorítmica en herramientas
-          con sentido humano.
-        </p>
-
-        <a
-          id="hero-cta"
-          href="#propuestas"
-          class="w-full max-w-sm lg:max-w-md py-4 px-8 bg-interactive-yellow text-interactive-dark font-body font-bold text-base lg:text-lg rounded shadow-lg hover:opacity-95 active:scale-95 active:opacity-90 transition-all duration-150 flex items-center justify-center"
-        >
-          Conocé nuestras propuestas
-        </a>
-      </div>
-    </section>
+    <a
+      id="hero-cta"
+      href="#propuestas"
+      class="hero-fade-item opacity-0 translate-y-6 transition-all duration-700 ease-out delay-300 w-full max-w-sm lg:max-w-md py-4 px-8 bg-interactive-yellow text-interactive-dark font-body font-bold text-base lg:text-lg rounded shadow-lg hover:opacity-95 active:scale-95 active:opacity-90 flex items-center justify-center"
+    >
+      Conocé nuestras propuestas
+    </a>
+  </div>
+</section>
     <!-- Sección Filosofía / Propuesta -->
     <section
       id="sobre-nosotros"
@@ -636,80 +636,135 @@
         </div>
       </div>
     </section>
-    <!-- Sección Servicios y Consultoría con título alineado al inicio de las tarjetas -->
-    <section
-      id="servicios"
-      class="relative py-24 px-8 md:px-16 lg:px-24 2xl:px-36 md:py-[80px] overflow-hidden bg-gradient-to-b from-surface-black via-interactive-dark to-surface-secondary"
-    >
-      <!-- Contenedor general centrado que engloba tanto al título como a las tarjetas para mantener el mismo eje -->
-      <div class="w-full max-w-7xl mx-auto flex flex-col items-center">
-        <!-- Cabecera de la Sección alineada al borde izquierdo de la grilla de tarjetas -->
-        <div class="w-full text-left mb-16">
-          <span
-            class="text-interactive-yellow font-heading uppercase tracking-widest text-sm sm:text-base font-semibold block mb-3"
-          >
-            Servicios y consultoría
-          </span>
-          <h2
-            class="font-heading text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-text-light"
-          >
-            Innovación con sentido
-          </h2>
-        </div>
+<!-- Sección Servicios y Consultoría -->
+<section
+  id="servicios"
+  class="relative py-20 px-4 sm:px-8 md:px-16 lg:px-24 2xl:px-36 overflow-visible bg-gradient-to-b from-surface-black via-interactive-dark to-surface-secondary"
+>
+  <div class="w-full max-w-4xl lg:max-w-5xl 2xl:max-w-6xl mx-auto flex flex-col items-center">
+    
+    <!-- Cabecera de la Sección Flotante Normal -->
+    <div class="w-full text-left mb-12">
+      <span
+        class="text-interactive-yellow font-heading uppercase tracking-widest text-xs sm:text-base font-semibold block mb-2"
+      >
+        Servicios y consultoría
+      </span>
+      <h2
+        class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-text-light leading-tight"
+      >
+        Innovación con sentido
+      </h2>
+    </div>
 
-        <!-- Contenedor de Tarjetas (Grid de 3 columnas en desktop, 1 en mobile) -->
-        <div
-          class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center"
-        >
-          <!-- Tarjeta 1: Consultoría Estratégica Educativa -->
-          <div
-            class="scroll-reveal w-full bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 2xl:p-12 text-center shadow-2xl transition-all duration-700 ease-out active:scale-95 flex flex-col justify-center"
-          >
-            <h3 class="font-heading text-2xl font-bold mb-4">
-              Consultoría Estratégica Educativa
-            </h3>
-            <p
-              class="font-body text-text-secondary text-base max-w-xl mx-auto leading-relaxed"
-            >
-              Auditoria de procesos de aprendizaje, implementación crítica de IA
-              en el aula y desarrollo de planes institucionales a medida.
-            </p>
+    <!-- Contenedor de Tarjetas (Sin márgenes entre tarjetas para apilamiento limpio) -->
+    <div id="services-cards-container" class="w-full flex flex-col items-center pb-24">
+      
+      <!-- Tarjeta 1 -->
+      <div
+        class="service-card sticky top-20 sm:top-24 w-full rounded-[28px] sm:rounded-[36px] bg-[linear-gradient(135deg,#754595_0%,#1B2631_100%)] p-[2px] shadow-[0_-12px_30px_rgba(0,0,0,0.5)] transition-transform duration-200"
+        style="z-index: 10;"
+      >
+        <div class="w-full h-full bg-gradient-to-br from-surface-background via-[#F2F0E9] to-[#EAE7DC] text-text-primary rounded-[26px] sm:rounded-[34px] p-6 sm:p-10 lg:p-12 flex flex-col justify-between min-h-[300px]">
+          <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
+            <div class="p-3.5 sm:p-4 bg-interactive-purple text-text-light rounded-xl sm:rounded-2xl shrink-0 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div class="w-full">
+              <h3 class="font-heading text-xl sm:text-3xl font-bold text-surface-black mb-2 leading-tight">
+                Consultoría Estratégica Educativa
+              </h3>
+              <p class="font-body text-text-secondary text-sm sm:text-base leading-relaxed">
+                Auditoría integral de procesos de aprendizaje, implementación crítica de Inteligencia Artificial en el aula y desarrollo estratégico de planes institucionales a medida.
+              </p>
+            </div>
           </div>
-
-          <!-- Tarjeta 2: Ingeniería Digital Pedagógica -->
-          <div
-            class="scroll-reveal w-full bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 2xl:p-12 text-center shadow-2xl transition-all duration-700 ease-out delay-100 active:scale-95 flex flex-col justify-center"
-          >
-            <h3 class="font-heading text-2xl font-bold mb-4">
-              Ingeniería Digital Pedagógica
-            </h3>
-            <p
-              class="font-body text-text-secondary text-base max-w-xl mx-auto leading-relaxed"
-            >
-              Desarrollo técnico de plataformas, automatizaciones conscientes de
-              flujo de trabajo para docentes y curaduría de herramientas
-              tecnológicas.
-            </p>
-          </div>
-
-          <!-- Tarjeta 3: Tutorías Individuales -->
-          <div
-            class="scroll-reveal w-full bg-gradient-to-br from-interactive-purple to-interactive-dark text-text-light rounded-[24px] p-8 sm:p-10 2xl:p-12 text-center shadow-2xl transition-all duration-700 ease-out delay-200 active:scale-95 flex flex-col justify-center"
-          >
-            <h3 class="font-heading text-2xl font-bold mb-4">
-              Tutorías Individuales
-            </h3>
-            <p
-              class="font-body text-text-light/90 text-base max-w-xl mx-auto leading-relaxed"
-            >
-              Acompañamiento personalizado para docentes y profesionales que
-              buscan dominar herramientas de IA aplicadas a sus propios
-              proyectos pedagógicos.
-            </p>
-          </div>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm text-text-primary font-body border-t border-black/10 pt-4">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-interactive-purple shrink-0"></span>
+              Auditoría de flujos pedagógicos
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-interactive-purple shrink-0"></span>
+              Adopción ética de IA
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
+
+      <!-- Tarjeta 2 (mt-8 o mt-12 da la separación inicial antes de scrollear) -->
+      <div
+        class="service-card sticky top-28 sm:top-32 w-full rounded-[28px] sm:rounded-[36px] bg-[linear-gradient(135deg,#FFD700_0%,#1B2631_100%)] p-[2px] shadow-[0_-12px_30px_rgba(0,0,0,0.5)] transition-transform duration-200 mt-8 sm:mt-12"
+        style="z-index: 11;"
+      >
+        <div class="w-full h-full bg-gradient-to-br from-surface-background via-[#F7F4E9] to-[#EFEAC9] text-text-primary rounded-[26px] sm:rounded-[34px] p-6 sm:p-10 lg:p-12 flex flex-col justify-between min-h-[300px]">
+          <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
+            <div class="p-3.5 sm:p-4 bg-interactive-yellow text-surface-black rounded-xl sm:rounded-2xl shrink-0 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <div class="w-full">
+              <h3 class="font-heading text-xl sm:text-3xl font-bold text-surface-black mb-2 leading-tight">
+                Ingeniería Digital Pedagógica
+              </h3>
+              <p class="font-body text-text-secondary text-sm sm:text-base leading-relaxed">
+                Desarrollo técnico de plataformas educativas, automatización consciente de tareas administrativas y curaduría de herramientas tecnológicas avanzadas.
+              </p>
+            </div>
+          </div>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm text-text-primary font-body border-t border-black/10 pt-4">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-interactive-yellow border border-surface-black/20 shrink-0"></span>
+              Automatización de tareas
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-interactive-yellow border border-surface-black/20 shrink-0"></span>
+              Plataformas a medida
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div
+        class="service-card sticky top-36 sm:top-40 w-full rounded-[28px] sm:rounded-[36px] bg-[linear-gradient(135deg,#754595_0%,#FFD700_100%)] p-[2px] shadow-[0_-12px_30px_rgba(0,0,0,0.5)] transition-transform duration-200 mt-8 sm:mt-12"
+        style="z-index: 12;"
+      >
+        <div class="w-full h-full bg-gradient-to-br from-interactive-dark via-[#212E3B] to-surface-black text-text-light rounded-[26px] sm:rounded-[34px] p-6 sm:p-10 lg:p-12 flex flex-col justify-between min-h-[300px]">
+          <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
+            <div class="p-3.5 sm:p-4 bg-interactive-purple/40 border border-interactive-purple text-interactive-yellow rounded-xl sm:rounded-2xl shrink-0 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <div class="w-full">
+              <h3 class="font-heading text-xl sm:text-3xl font-bold text-text-light mb-2 leading-tight">
+                Tutorías Individuales
+              </h3>
+              <p class="font-body text-text-light/80 text-sm sm:text-base leading-relaxed">
+                Acompañamiento uno a uno para docentes y profesionales que buscan dominar herramientas de Inteligencia Artificial aplicadas a la creación de sus propios proyectos.
+              </p>
+            </div>
+          </div>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm text-text-light/90 font-body border-t border-text-light/10 pt-4">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-interactive-yellow shrink-0"></span>
+              Mentoría 1 a 1
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-interactive-yellow shrink-0"></span>
+              Proyectos reales
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <!-- Sección Propuestas Formativas -->
 <section
   id="propuestas"
