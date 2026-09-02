@@ -31,6 +31,7 @@ html {
   /* Elimina el resaltado azul molesto al tocar elementos interactivos en Chrome/Safari móvil */
   -webkit-tap-highlight-color: transparent;
 }
+
 /* Ocultar barra de scroll para el contenedor deslizable */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
