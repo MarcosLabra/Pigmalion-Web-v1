@@ -8,8 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>Pigmalión</title>
-    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-CbwLX9Zh.js"></script>
-    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-KN-ayied.css">
+    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-BkhCbApQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-rnbiP8Do.css">
   </head>
 
   <body class="bg-surface-background font-body text-text-primary">
@@ -710,96 +710,141 @@
         </div>
       </div>
     </section>
-    <!-- Sección Propuestas Formativas -->
-    <section
-      id="propuestas"
-      class="relative py-24 px-8 md:px-16 lg:px-24 2xl:px-36 md:py-[80px] overflow-visible bg-surface-secondary text-text-light pt-4"
+<!-- Sección Propuestas Formativas -->
+<section
+  id="propuestas"
+  class="relative py-24 px-8 md:px-16 lg:px-24 2xl:px-36 md:py-[80px] overflow-hidden bg-surface-secondary text-text-light pt-4"
+>
+  <div class="w-full max-w-7xl mx-auto flex flex-col items-start">
+    
+    <!-- Título de la Sección -->
+    <div class="w-full text-left mb-10 max-w-5xl">
+      <h2
+        class="font-heading text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-text-light"
+      >
+        Propuestas formativas
+      </h2>
+    </div>
+
+    <!-- Ancla para el scroll con offset de header -->
+    <div id="filtros-anchor" class="scroll-mt-32"></div>
+
+    <!-- Filtros interactivos -->
+    <div
+      class="w-full flex flex-col items-center gap-6 mb-12 max-w-lg mx-auto sm:max-w-none"
     >
-      <div class="w-full max-w-7xl mx-auto flex flex-col items-start">
-        <div class="w-full text-left mb-10 max-w-5xl">
-          <h2
-            class="font-heading text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-text-light"
-          >
-            Propuestas formativas
-          </h2>
-        </div>
-
-        <div
-          class="w-full flex flex-col items-center gap-6 mb-12 max-w-lg mx-auto sm:max-w-none"
+      <!-- Grupo 1: Audiencia -->
+      <div class="flex flex-wrap justify-center gap-3" id="filter-audience">
+        <button
+          data-filter="docentes"
+          class="filter-btn-audience active w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-purple shadow-md text-text-light border-transparent text-center select-none"
         >
-          <div class="flex flex-wrap justify-center gap-3" id="filter-audience">
-            <button
-              data-filter="docentes"
-              class="filter-btn-audience active w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-purple shadow-md text-text-light border-transparent text-center select-none"
-            >
-              Docentes
-            </button>
-            <button
-              data-filter="familias"
-              class="filter-btn-audience active w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-purple shadow-md text-text-light border-transparent text-center select-none"
-            >
-              Familias
-            </button>
-          </div>
-
-          <div class="flex flex-wrap justify-center gap-3" id="filter-level">
-            <button
-              data-filter="inicial"
-              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
-            >
-              Inicial
-            </button>
-            <button
-              data-filter="primaria"
-              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
-            >
-              Primaria
-            </button>
-            <button
-              data-filter="secundaria"
-              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
-            >
-              Secundaria
-            </button>
-            <button
-              data-filter="superior"
-              class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
-            >
-              Superior
-            </button>
-          </div>
-        </div>
-
-        <!-- Contenedor Dinámico de Tarjetas Apiladas (Ancho extendido) -->
-        <div class="w-full flex justify-center">
-          <div
-            id="cards-container"
-            class="w-full max-w-6xl flex flex-col items-center mb-16"
-          >
-            <!-- Las tarjetas se insertan dinámicamente desde JS -->
-          </div>
-        </div>
-
-        <div
-          class="w-full max-w-5xl mx-auto bg-interactive-dark/60 backdrop-blur-md border border-text-light/10 rounded-2xl p-6 text-center mb-6 z-30"
+          Docentes
+        </button>
+        <button
+          data-filter="familias"
+          class="filter-btn-audience active w-[140px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-purple shadow-md text-text-light border-transparent text-center select-none"
         >
-          <p class="font-body text-text-light text-sm sm:text-base">
-            ¿No encontrás lo que buscás? Diseñemos juntos una
-            <strong class="text-interactive-yellow"
-              >propuesta a tu medida</strong
-            >
-          </p>
-        </div>
-
-        <div class="w-full flex justify-center z-30">
-          <a
-            href="#contacto"
-            class="w-full max-w-md py-4 px-8 bg-interactive-yellow text-surface-black font-body font-bold text-base rounded-xl text-center hover:opacity-95 active:scale-95 active:opacity-90 transition-all duration-150 shadow-lg"
-          >
-            Contactanos para empezar
-          </a>
-        </div>
+          Familias
+        </button>
       </div>
+
+      <!-- Grupo 2: Niveles -->
+      <div class="flex flex-wrap justify-center gap-3" id="filter-level">
+        <button
+          data-filter="inicial"
+          class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
+        >
+          Inicial
+        </button>
+        <button
+          data-filter="primaria"
+          class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
+        >
+          Primaria
+        </button>
+        <button
+          data-filter="secundaria"
+          class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
+        >
+          Secundaria
+        </button>
+        <button
+          data-filter="superior"
+          class="filter-btn-level active w-[130px] py-2.5 px-4 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow text-center select-none"
+        >
+          Superior
+        </button>
+      </div>
+    </div>
+
+    <!-- Contenedor Dinámico (Grid 1 columna en Mobile, 2 columnas en Desktop) -->
+    <div class="w-full flex justify-center">
+      <div
+        id="cards-container"
+        class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 items-stretch gap-8 mb-12 justify-items-center"
+      >
+        <!-- Las tarjetas se insertan dinámicamente desde JS -->
+      </div>
+    </div>
+
+    <!-- Banner inferior y Botón CTA -->
+    <div
+      class="w-full max-w-5xl mx-auto bg-interactive-dark/60 backdrop-blur-md border border-text-light/10 rounded-2xl p-6 text-center mb-6"
+    >
+      <p class="font-body text-text-light text-sm sm:text-base">
+        ¿No encontrás lo que buscás? Diseñemos juntos una
+        <strong class="text-interactive-yellow"
+          >propuesta a tu medida</strong
+        >
+      </p>
+    </div>
+
+    <div class="w-full flex justify-center">
+      <a
+        href="#contacto"
+        class="w-full max-w-md py-4 px-8 bg-interactive-yellow text-surface-black font-body font-bold text-base rounded-xl text-center hover:opacity-95 active:scale-95 active:opacity-90 transition-all duration-150 shadow-lg"
+      >
+        Contactanos para empezar
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Botón flotante para regresar a los filtros -->
+  <button
+    id="btn-back-to-filters"
+    class="fixed bottom-6 right-6 z-50 p-3.5 bg-interactive-purple text-text-light rounded-full shadow-2xl border border-white/20 transition-all duration-300 opacity-0 pointer-events-none hover:scale-105 active:scale-95 flex items-center justify-center gap-2 font-body font-semibold text-xs sm:text-sm"
+    title="Volver a los filtros"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+    <span class="hidden sm:inline">Filtros</span>
+  </button>
+</section>
+      <!-- Botón flotante -->
+      <button
+        id="btn-back-to-filters"
+        class="fixed bottom-6 right-6 z-50 p-3.5 bg-interactive-purple text-text-light rounded-full shadow-2xl border border-white/20 transition-all duration-300 opacity-0 pointer-events-none hover:scale-105 active:scale-95 flex items-center justify-center gap-2 font-body font-semibold text-xs sm:text-sm"
+        title="Volver a los filtros"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 15l7-7 7 7"
+          />
+        </svg>
+        <span class="hidden sm:inline">Filtros</span>
+      </button>
     </section>
     <!-- Sección Sobre nosotros -->
     <section
