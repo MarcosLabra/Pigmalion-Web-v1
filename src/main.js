@@ -33,7 +33,7 @@ window.addEventListener("scroll", () => {
       "backdrop-blur-md",
       "shadow-lg",
       "border-b",
-      "border-text-light/10"
+      "border-text-light/10",
     );
     header.classList.remove("bg-transparent");
   } else {
@@ -42,11 +42,31 @@ window.addEventListener("scroll", () => {
       "backdrop-blur-md",
       "shadow-lg",
       "border-b",
-      "border-text-light/10"
+      "border-text-light/10",
     );
     header.classList.add("bg-transparent");
   }
 });
+
+// Animación Fade-In de entrada para el Hero al cargar la página
+function initHeroFadeIn() {
+  const heroItems = document.querySelectorAll(".hero-fade-item");
+  if (!heroItems.length) return;
+
+  // Retraso mínimo para asegurar la inicialización completa del DOM
+  setTimeout(() => {
+    heroItems.forEach((el) => {
+      el.classList.remove("opacity-0", "translate-y-6");
+      el.classList.add("opacity-100", "translate-y-0");
+    });
+  }, 100);
+}
+
+document.addEventListener("DOMContentLoaded", initHeroFadeIn);
+// Fallback en caso de que DOMContentLoaded ya haya ocurrido
+if (document.readyState === "complete" || document.readyState === "interactive") {
+  initHeroFadeIn();
+}
 
 // 3. Animación de revelado progresivo + Zoom interno en fotos
 function initScrollReveal() {
@@ -78,7 +98,7 @@ function initScrollReveal() {
       {
         threshold: 0.15,
         rootMargin: "0px 0px -20px 0px",
-      }
+      },
     );
 
     revealElements.forEach((el) => observer.observe(el));
@@ -119,7 +139,7 @@ function renderCards(data) {
       <li>
         <strong>${i.topic}:</strong> ${i.text}
       </li>
-    `
+    `,
       )
       .join("");
 
@@ -164,11 +184,11 @@ const levelButtons = document.querySelectorAll(".filter-btn-level");
 function filterCards() {
   const cards = document.querySelectorAll(".proposal-card");
   const activeAudiences = Array.from(
-    document.querySelectorAll(".filter-btn-audience.active")
+    document.querySelectorAll(".filter-btn-audience.active"),
   ).map((btn) => btn.getAttribute("data-filter"));
 
   const activeLevels = Array.from(
-    document.querySelectorAll(".filter-btn-level.active")
+    document.querySelectorAll(".filter-btn-level.active"),
   ).map((btn) => btn.getAttribute("data-filter"));
 
   cards.forEach((card) => {
@@ -176,7 +196,7 @@ function filterCards() {
     const cardLevels = card.getAttribute("data-level").split(" ");
 
     const matchesAudience = activeAudiences.some((a) =>
-      cardAudience.includes(a)
+      cardAudience.includes(a),
     );
     const matchesLevel = cardLevels.some((l) => activeLevels.includes(l));
 
@@ -194,7 +214,7 @@ function setupStrictToggleFilter(buttons, activeBgClass, inactiveBgClass) {
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const activeCount = Array.from(buttons).filter((b) =>
-        b.classList.contains("active")
+        b.classList.contains("active"),
       ).length;
 
       if (btn.classList.contains("active") && activeCount === 1) {
@@ -219,23 +239,22 @@ function setupStrictToggleFilter(buttons, activeBgClass, inactiveBgClass) {
 setupStrictToggleFilter(
   audienceButtons,
   "bg-interactive-purple shadow-md text-text-light border-transparent",
-  "bg-interactive-purple/40 border border-interactive-purple/60 text-text-light/80"
+  "bg-interactive-purple/40 border border-interactive-purple/60 text-text-light/80",
 );
 
 setupStrictToggleFilter(
   levelButtons,
   "bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow",
-  "bg-interactive-yellow/20 border border-interactive-yellow text-interactive-yellow"
+  "bg-interactive-yellow/20 border border-interactive-yellow text-interactive-yellow",
 );
 
-// 6. Lógica del Botón Flotante para Volver a los Filtros
+// 6. Botón Flotante para Volver a Filtros
 const backToFiltersBtn = document.getElementById("btn-back-to-filters");
 const cardsContainer = document.getElementById("cards-container");
 
 if (backToFiltersBtn && cardsContainer) {
   function handleFloatingButtonVisibility() {
     const rect = cardsContainer.getBoundingClientRect();
-    // Aparece solo cuando el usuario scrollea sobre la grilla de tarjetas
     const isInsideCardsArea = rect.top < 0 && rect.bottom > 300;
 
     if (isInsideCardsArea) {
@@ -263,3 +282,22 @@ if (backToFiltersBtn && cardsContainer) {
     });
   });
 }
+
+function initServicesStacking() {
+  const serviceCards = document.querySelectorAll(".service-card");
+  if (!serviceCards.length) return;
+
+  const isMobile = window.innerWidth < 768;
+
+  // Offsets progresivos para replicar la cascada exacta de OpenOnion
+  const baseTop = isMobile ? 70 : 100;
+  const step = isMobile ? 18 : 28;
+
+  serviceCards.forEach((card, index) => {
+    card.style.top = `${baseTop + index * step}px`;
+    card.style.marginTop = index === 0 ? "0px" : isMobile ? "2rem" : "3rem";
+  });
+}
+
+window.addEventListener("resize", initServicesStacking);
+initServicesStacking();
