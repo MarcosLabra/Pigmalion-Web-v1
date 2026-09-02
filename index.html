@@ -8,8 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>Pigmalión</title>
-    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-CGVd0rBM.js"></script>
-    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-Bo-v6a4T.css">
+    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-CbwLX9Zh.js"></script>
+    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-KN-ayied.css">
   </head>
 
   <body class="bg-surface-background font-body text-text-primary">
@@ -713,10 +713,9 @@
     <!-- Sección Propuestas Formativas -->
     <section
       id="propuestas"
-      class="relative py-24 px-8 md:px-16 lg:px-24 2xl:px-36 md:py-[80px] overflow-hidden bg-surface-secondary text-text-light pt-4"
+      class="relative py-24 px-8 md:px-16 lg:px-24 2xl:px-36 md:py-[80px] overflow-visible bg-surface-secondary text-text-light pt-4"
     >
       <div class="w-full max-w-7xl mx-auto flex flex-col items-start">
-        <!-- Título de la Sección -->
         <div class="w-full text-left mb-10 max-w-5xl">
           <h2
             class="font-heading text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-text-light"
@@ -725,11 +724,9 @@
           </h2>
         </div>
 
-        <!-- Filtros interactivos -->
         <div
           class="w-full flex flex-col items-center gap-6 mb-12 max-w-lg mx-auto sm:max-w-none"
         >
-          <!-- Grupo 1: Audiencia -->
           <div class="flex flex-wrap justify-center gap-3" id="filter-audience">
             <button
               data-filter="docentes"
@@ -745,7 +742,6 @@
             </button>
           </div>
 
-          <!-- Grupo 2: Niveles -->
           <div class="flex flex-wrap justify-center gap-3" id="filter-level">
             <button
               data-filter="inicial"
@@ -774,29 +770,28 @@
           </div>
         </div>
 
-        <!-- Contenedor Dinámico de Tarjetas (items-stretch para igualar alturas) -->
+        <!-- Contenedor Dinámico de Tarjetas Apiladas (Ancho extendido) -->
         <div class="w-full flex justify-center">
           <div
             id="cards-container"
-            class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 items-stretch gap-8 mb-12 justify-items-center"
+            class="w-full max-w-6xl flex flex-col items-center mb-16"
           >
             <!-- Las tarjetas se insertan dinámicamente desde JS -->
           </div>
         </div>
 
-        <!-- Banner inferior y Botón CTA -->
         <div
-          class="w-full max-w-5xl mx-auto bg-interactive-dark/60 backdrop-blur-md border border-text-light/10 rounded-2xl p-6 text-center mb-6"
+          class="w-full max-w-5xl mx-auto bg-interactive-dark/60 backdrop-blur-md border border-text-light/10 rounded-2xl p-6 text-center mb-6 z-30"
         >
           <p class="font-body text-text-light text-sm sm:text-base">
-            ¿No encontras lo que buscas? Diseñemos juntos una
+            ¿No encontrás lo que buscás? Diseñemos juntos una
             <strong class="text-interactive-yellow"
               >propuesta a tu medida</strong
             >
           </p>
         </div>
 
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center z-30">
           <a
             href="#contacto"
             class="w-full max-w-md py-4 px-8 bg-interactive-yellow text-surface-black font-body font-bold text-base rounded-xl text-center hover:opacity-95 active:scale-95 active:opacity-90 transition-all duration-150 shadow-lg"
