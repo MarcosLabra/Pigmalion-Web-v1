@@ -1,24 +1,29 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 @theme {
-  --font-heading: 'EB Garamond', serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: "EB Garamond", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
 
-  --color-surface-background: #F7F6F2;
+  --color-surface-background: #f7f6f2;
   --color-surface-secondary: #566573;
   --color-surface-black: #111111;
 
   --color-interactive-purple: #754595;
-  --color-interactive-yellow: #FFD700;
-  --color-interactive-dark: #1B2631;
+  --color-interactive-yellow: #ffd700;
+  --color-interactive-dark: #1b2631;
 
-  --color-text-primary: #1B2631;
+  --color-text-primary: #1b2631;
   --color-text-secondary: #566573;
-  --color-text-light: #F7F6F2;
+  --color-text-light: #f7f6f2;
 
-  --background-image-gradient-hero: linear-gradient(0deg, #111111 0%, #1B2631 54.79%, #566573 100%);
+  --background-image-gradient-hero: linear-gradient(
+    0deg,
+    #111111 0%,
+    #1b2631 54.79%,
+    #566573 100%
+  );
 }
 
 html {
@@ -26,7 +31,14 @@ html {
   /* Elimina el resaltado azul molesto al tocar elementos interactivos en Chrome/Safari móvil */
   -webkit-tap-highlight-color: transparent;
 }
-
+/* Ocultar barra de scroll para el contenedor deslizable */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 /* Menú mobile con deslizamiento por transformaciones (rápido y fluido en ambos sentidos) */
 .mobile-menu-closed {
   opacity: 0;
@@ -63,28 +75,31 @@ html {
    ========================================================================== */
 
 /* 1. Feedback físico al presionar botones, enlaces principales y tarjetas */
-button, 
-a.btn, 
-.proposal-card, 
-.filter-btn-audience, 
+button,
+a.btn,
+.proposal-card,
+.filter-btn-audience,
 .filter-btn-level {
   touch-action: manipulation; /* Previene el retraso de 300ms del doble-tap en navegación móvil */
-  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
-              opacity 0.15s ease, 
-              background-color 0.2s ease, 
-              box-shadow 0.2s ease;
+  transition:
+    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.15s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 /* Hundimiento sutil al toque (Tap Feedback) */
-button:active, 
-a:active, 
+button:active,
+a:active,
 .proposal-card:active {
   transform: scale(0.97);
 }
 
 /* 2. Respetar preferencias de usuarios con movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
+  *,
+  ::before,
+  ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
