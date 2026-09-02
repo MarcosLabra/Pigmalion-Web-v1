@@ -33,7 +33,7 @@ window.addEventListener("scroll", () => {
       "backdrop-blur-md",
       "shadow-lg",
       "border-b",
-      "border-text-light/10",
+      "border-text-light/10"
     );
     header.classList.remove("bg-transparent");
   } else {
@@ -42,7 +42,7 @@ window.addEventListener("scroll", () => {
       "backdrop-blur-md",
       "shadow-lg",
       "border-b",
-      "border-text-light/10",
+      "border-text-light/10"
     );
     header.classList.add("bg-transparent");
   }
@@ -78,7 +78,7 @@ function initScrollReveal() {
       {
         threshold: 0.15,
         rootMargin: "0px 0px -20px 0px",
-      },
+      }
     );
 
     revealElements.forEach((el) => observer.observe(el));
@@ -87,28 +87,18 @@ function initScrollReveal() {
 
 initScrollReveal();
 
+// 4. Renderizado Dinámico de Propuestas Formativas
 function renderCards(data) {
   const container = document.getElementById("cards-container");
   if (!container) return;
 
   container.innerHTML = "";
 
-  const isMobile = window.innerWidth < 768;
-
-  data.forEach((item, index) => {
+  data.forEach((item) => {
     const card = document.createElement("div");
 
-    // En mobile usaremos un offset superior más ajustado (70px + 12px por tarjeta)
-    // En desktop mantenemos (112px + 24px por tarjeta)
-    const baseTop = isMobile ? 70 : 112;
-    const step = isMobile ? 12 : 24;
-    const topOffset = baseTop + index * step;
-
     card.className =
-      "proposal-card sticky w-full max-w-4xl lg:max-w-5xl 2xl:max-w-6xl p-[2px] rounded-[24px] sm:rounded-[32px] bg-[linear-gradient(135deg,#111111_0%,#754595_100%)] shadow-[0_-12px_30px_rgba(0,0,0,0.35)] transition-all duration-300 mb-[25vh] sm:mb-[35vh]";
-
-    card.style.top = `${topOffset}px`;
-    card.style.zIndex = (index + 10).toString();
+      "proposal-card w-full h-full bg-surface-background text-text-primary rounded-[24px] p-6 sm:p-8 2xl:p-12 shadow-2xl transition-all duration-300 border border-black/5 flex flex-col justify-between";
 
     card.setAttribute("data-audience", item.audience.join(" "));
     card.setAttribute("data-level", item.level.join(" "));
@@ -119,7 +109,7 @@ function renderCards(data) {
           b.type === "yellow"
             ? "bg-interactive-yellow text-surface-black"
             : "bg-interactive-purple text-text-light";
-        return `<span class="${bgClass} text-[10px] sm:text-xs font-bold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full">${b.label}</span>`;
+        return `<span class="${bgClass} text-xs font-bold px-3 py-1 rounded-full">${b.label}</span>`;
       })
       .join("");
 
@@ -129,30 +119,31 @@ function renderCards(data) {
       <li>
         <strong>${i.topic}:</strong> ${i.text}
       </li>
-    `,
+    `
       )
       .join("");
 
-    // Padding optimizado: p-5 en móvil para reducir altura vertical
     card.innerHTML = `
-      <div class="w-full h-full bg-surface-background text-text-primary rounded-[22px] sm:rounded-[30px] p-5 sm:p-10 2xl:p-12">
-        <div class="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-6">
-          ${badgesHTML}
+      <div class="flex flex-col h-full justify-between">
+        <div>
+          <div class="flex flex-wrap gap-2 mb-6">
+            ${badgesHTML}
+          </div>
+
+          <h3 class="font-heading text-2xl sm:text-3xl font-bold text-center mb-6 text-surface-black">
+            ${item.title}
+          </h3>
+
+          <p class="font-body text-text-secondary text-base mb-6 leading-relaxed">
+            ${item.description}
+          </p>
+
+          <ul class="list-disc list-inside space-y-2 text-text-secondary text-sm sm:text-base mb-8">
+            ${listHTML}
+          </ul>
         </div>
 
-        <h3 class="font-heading text-xl sm:text-3xl font-bold text-center mb-3 sm:mb-6 text-surface-black">
-          ${item.title}
-        </h3>
-
-        <p class="font-body text-text-secondary text-sm sm:text-base mb-3 sm:mb-6 leading-relaxed">
-          ${item.description}
-        </p>
-
-        <ul class="list-disc list-inside space-y-1 sm:space-y-2 text-text-secondary text-xs sm:text-base mb-4 sm:mb-8">
-          ${listHTML}
-        </ul>
-
-        <div class="border-t border-text-secondary/20 pt-4 sm:pt-6 space-y-1 sm:space-y-2 text-xs sm:text-base text-text-secondary">
+        <div class="border-t border-text-secondary/20 pt-6 space-y-2 text-sm sm:text-base text-text-secondary mt-auto">
           <p><strong>Duración:</strong> ${item.details.duration}</p>
           <p><strong>Modalidad:</strong> ${item.details.modality}</p>
           <p><strong>Entregable:</strong> ${item.details.deliverable}</p>
@@ -173,10 +164,11 @@ const levelButtons = document.querySelectorAll(".filter-btn-level");
 function filterCards() {
   const cards = document.querySelectorAll(".proposal-card");
   const activeAudiences = Array.from(
-    document.querySelectorAll(".filter-btn-audience.active"),
+    document.querySelectorAll(".filter-btn-audience.active")
   ).map((btn) => btn.getAttribute("data-filter"));
+
   const activeLevels = Array.from(
-    document.querySelectorAll(".filter-btn-level.active"),
+    document.querySelectorAll(".filter-btn-level.active")
   ).map((btn) => btn.getAttribute("data-filter"));
 
   cards.forEach((card) => {
@@ -184,12 +176,12 @@ function filterCards() {
     const cardLevels = card.getAttribute("data-level").split(" ");
 
     const matchesAudience = activeAudiences.some((a) =>
-      cardAudience.includes(a),
+      cardAudience.includes(a)
     );
     const matchesLevel = cardLevels.some((l) => activeLevels.includes(l));
 
     if (matchesAudience && matchesLevel) {
-      card.style.display = "block";
+      card.style.display = "flex";
       setTimeout(() => (card.style.opacity = "1"), 10);
     } else {
       card.style.opacity = "0";
@@ -202,7 +194,7 @@ function setupStrictToggleFilter(buttons, activeBgClass, inactiveBgClass) {
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const activeCount = Array.from(buttons).filter((b) =>
-        b.classList.contains("active"),
+        b.classList.contains("active")
       ).length;
 
       if (btn.classList.contains("active") && activeCount === 1) {
@@ -227,11 +219,47 @@ function setupStrictToggleFilter(buttons, activeBgClass, inactiveBgClass) {
 setupStrictToggleFilter(
   audienceButtons,
   "bg-interactive-purple shadow-md text-text-light border-transparent",
-  "bg-interactive-purple/40 border border-interactive-purple/60 text-text-light/80",
+  "bg-interactive-purple/40 border border-interactive-purple/60 text-text-light/80"
 );
 
 setupStrictToggleFilter(
   levelButtons,
   "bg-interactive-yellow shadow-md text-surface-black border-interactive-yellow",
-  "bg-interactive-yellow/20 border border-interactive-yellow text-interactive-yellow",
+  "bg-interactive-yellow/20 border border-interactive-yellow text-interactive-yellow"
 );
+
+// 6. Lógica del Botón Flotante para Volver a los Filtros
+const backToFiltersBtn = document.getElementById("btn-back-to-filters");
+const cardsContainer = document.getElementById("cards-container");
+
+if (backToFiltersBtn && cardsContainer) {
+  function handleFloatingButtonVisibility() {
+    const rect = cardsContainer.getBoundingClientRect();
+    // Aparece solo cuando el usuario scrollea sobre la grilla de tarjetas
+    const isInsideCardsArea = rect.top < 0 && rect.bottom > 300;
+
+    if (isInsideCardsArea) {
+      backToFiltersBtn.classList.remove("opacity-0", "pointer-events-none");
+      backToFiltersBtn.classList.add("opacity-100", "pointer-events-auto");
+    } else {
+      backToFiltersBtn.classList.remove("opacity-100", "pointer-events-auto");
+      backToFiltersBtn.classList.add("opacity-0", "pointer-events-none");
+    }
+  }
+
+  window.addEventListener("scroll", handleFloatingButtonVisibility);
+
+  backToFiltersBtn.addEventListener("click", () => {
+    const anchor = document.getElementById("filtros-anchor");
+    if (!anchor) return;
+
+    const headerOffset = 100;
+    const elementPosition = anchor.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  });
+}
