@@ -8,8 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>Pigmalión</title>
-    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-CYiwlViv.js"></script>
-    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-C01iakjB.css">
+    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-CIdxqUqd.js"></script>
+    <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-BpXRM3_7.css">
   </head>
 
   <body class="bg-surface-background font-body text-text-primary">
@@ -855,103 +855,112 @@
       </div>
     </section>
 
-    <!-- Sección Propuestas Formativas -->
-    <section
-      id="propuestas"
-      class="relative px-6 sm:px-12 md:px-16 lg:px-24 2xl:px-36 py-16 overflow-x-clip bg-surface-secondary text-text-light pt-6"
-    >
-      <div
-        class="w-full max-w-5xl 2xl:max-w-6xl mx-auto flex flex-col items-center"
-      >
-        <!-- Encabezado de la Sección -->
-        <div class="w-full text-left mb-6">
-          <h2
-            class="font-heading text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-text-light"
-          >
-            Propuestas formativas
-          </h2>
-        </div>
+   <!-- Sección Propuestas Formativas -->
+<section
+  id="propuestas"
+  class="relative px-6 sm:px-12 md:px-16 lg:px-24 2xl:px-36 py-16 overflow-x-clip bg-surface-secondary text-text-light pt-6"
+>
+  <div class="w-full max-w-5xl 2xl:max-w-6xl mx-auto flex flex-col items-center">
+    <!-- Encabezado de la Sección -->
+    <div class="w-full text-left mb-6">
+      <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-text-light">
+        Propuestas formativas
+      </h2>
+    </div>
 
-        <!-- Barra de Filtros Sticky -->
-        <div
-          class="sticky top-[56px] lg:top-[68px] z-30 w-full bg-surface-secondary py-4 mb-10 transition-all duration-200 shadow-none -mt-[2px]"
+    <!-- Barra de Filtros Sticky -->
+    <div class="sticky top-[56px] lg:top-[68px] z-30 w-full bg-surface-secondary py-4 mb-10 transition-all duration-200 shadow-none -mt-[2px]">
+      <div class="flex items-center gap-3 overflow-x-auto no-scrollbar scroll-smooth sm:justify-center w-full">
+        <button
+          data-filter="docentes"
+          class="filter-btn-audience active shrink-0 min-w-[120px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-purple text-text-light border border-transparent select-none whitespace-nowrap"
         >
-          <div
-            class="flex items-center gap-3 overflow-x-auto no-scrollbar scroll-smooth sm:justify-center w-full"
-          >
-            <button
-              data-filter="docentes"
-              class="filter-btn-audience active shrink-0 min-w-[120px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-purple text-text-light border border-transparent select-none whitespace-nowrap"
-            >
-              Docentes
-            </button>
-            <button
-              data-filter="familias"
-              class="filter-btn-audience active shrink-0 min-w-[120px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-purple text-text-light border border-transparent select-none whitespace-nowrap"
-            >
-              Familias
-            </button>
+          Docentes
+        </button>
+        <button
+          data-filter="familias"
+          class="filter-btn-audience active shrink-0 min-w-[120px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-purple text-text-light border border-transparent select-none whitespace-nowrap"
+        >
+          Familias
+        </button>
 
-            <div class="h-6 w-[1px] bg-text-light/20 shrink-0 mx-0.5"></div>
+        <div class="h-6 w-[1px] bg-text-light/20 shrink-0 mx-0.5"></div>
 
-            <button
-              data-filter="inicial"
-              class="filter-btn-level active shrink-0 min-w-[110px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow text-surface-black border border-interactive-yellow select-none whitespace-nowrap"
-            >
-              Inicial
-            </button>
-            <button
-              data-filter="primaria"
-              class="filter-btn-level active shrink-0 min-w-[110px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow text-surface-black border border-interactive-yellow select-none whitespace-nowrap"
-            >
-              Primaria
-            </button>
-            <button
-              data-filter="secundaria"
-              class="filter-btn-level active shrink-0 min-w-[110px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow text-surface-black border border-interactive-yellow select-none whitespace-nowrap"
-            >
-              Secundaria
-            </button>
-            <button
-              data-filter="superior"
-              class="filter-btn-level active shrink-0 min-w-[110px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow text-surface-black border border-interactive-yellow select-none whitespace-nowrap"
-            >
-              Superior
-            </button>
-          </div>
-        </div>
-
-        <!-- Contenedor Principal de Tarjetas -->
-        <div class="w-full flex flex-col items-center">
-          <div
-            id="cards-container"
-            class="w-full grid grid-cols-1 gap-8 mb-12 justify-items-stretch"
-          >
-            <!-- Tarjetas desde JS -->
-          </div>
-
-          <div
-            class="w-full bg-interactive-dark/60 backdrop-blur-md border border-text-light/10 rounded-2xl p-6 text-center mb-6"
-          >
-            <p class="font-body text-text-light text-sm sm:text-base">
-              ¿No encontrás lo que buscás? Diseñemos juntos una
-              <strong class="text-interactive-yellow"
-                >propuesta a tu medida</strong
-              >
-            </p>
-          </div>
-
-          <div class="w-full flex justify-center">
-            <a
-              href="#contacto"
-              class="w-full max-w-md py-4 px-8 bg-interactive-yellow text-surface-black font-body font-bold text-base rounded-xl text-center hover:opacity-95 active:scale-95 active:opacity-90 transition-all duration-150 shadow-lg"
-            >
-              Contactanos para empezar
-            </a>
-          </div>
-        </div>
+        <button
+          data-filter="inicial"
+          class="filter-btn-level active shrink-0 min-w-[110px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow text-surface-black border border-interactive-yellow select-none whitespace-nowrap"
+        >
+          Inicial
+        </button>
+        <button
+          data-filter="primaria"
+          class="filter-btn-level active shrink-0 min-w-[110px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow text-surface-black border border-interactive-yellow select-none whitespace-nowrap"
+        >
+          Primaria
+        </button>
+        <button
+          data-filter="secundaria"
+          class="filter-btn-level active shrink-0 min-w-[110px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow text-surface-black border border-interactive-yellow select-none whitespace-nowrap"
+        >
+          Secundaria
+        </button>
+        <button
+          data-filter="superior"
+          class="filter-btn-level active shrink-0 min-w-[110px] sm:min-w-0 py-3 sm:py-2.5 px-6 sm:px-5 rounded-xl font-body font-semibold text-sm transition-all duration-200 active:scale-95 bg-interactive-yellow text-surface-black border border-interactive-yellow select-none whitespace-nowrap"
+        >
+          Superior
+        </button>
       </div>
-    </section>
+    </div>
+
+    <!-- Contenedor Principal de Tarjetas (Reducidas) -->
+    <div class="w-full flex flex-col items-center">
+      <div
+        id="cards-container"
+        class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 justify-items-stretch"
+      >
+        <!-- Tarjetas dinámicas generadas desde JS -->
+      </div>
+
+      <div class="w-full bg-interactive-dark/60 backdrop-blur-md border border-text-light/10 rounded-2xl p-6 text-center mb-6">
+        <p class="font-body text-text-light text-sm sm:text-base">
+          ¿No encontrás lo que buscás? Diseñemos juntos una
+          <strong class="text-interactive-yellow">propuesta a tu medida</strong>
+        </p>
+      </div>
+
+      <div class="w-full flex justify-center">
+        <a
+          href="#contacto"
+          class="w-full max-w-md py-4 px-8 bg-interactive-yellow text-surface-black font-body font-bold text-base rounded-xl text-center hover:opacity-95 active:scale-95 active:opacity-90 transition-all duration-150 shadow-lg"
+        >
+          Contactanos para empezar
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Desarrollado -->
+  <div
+    id="modal-propuesta"
+    class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 bg-surface-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0"
+  >
+    <div
+      class="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-interactive-dark border border-text-light/15 rounded-2xl p-6 sm:p-8 text-text-light shadow-2xl"
+    >
+      <!-- Botón de Cierre -->
+      <button
+        id="close-modal"
+        class="absolute top-4 right-4 text-text-light/60 hover:text-text-light text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-surface-black/30 hover:bg-surface-black/60 transition-colors"
+      >
+        &times;
+      </button>
+
+      <!-- Contenido Inyectado del Modal -->
+      <div id="modal-content" class="flex flex-col gap-6"></div>
+    </div>
+  </div>
+</section>
     <!-- Sección Sobre nosotros -->
     <section
       id="sobre-nosotros"
