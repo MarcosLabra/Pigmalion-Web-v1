@@ -722,9 +722,10 @@
           >
             <button
               id="close-modal"
-              class="absolute top-4 right-4 text-text-light/60 hover:text-text-light text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-surface-black/30 hover:bg-surface-black/60 transition-colors"
+              aria-label="Cerrar ventana modal"
+              class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-black/40 hover:bg-surface-black/70 text-interactive-yellow text-base border-none outline-none focus:outline-none active:outline-none [-webkit-tap-highlight-color:transparent] transition-colors flex items-center justify-center p-0 leading-none"
             >
-              &times;
+              <i class="fa-solid fa-xmark pointer-events-none"></i>
             </button>
             <div id="modal-content" class="flex flex-col gap-6"></div>
           </div>
