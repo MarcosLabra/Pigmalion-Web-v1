@@ -956,7 +956,7 @@
       class="relative py-24 px-8 md:px-16 lg:px-24 2xl:px-36 md:py-[80px] overflow-hidden bg-gradient-to-b from-surface-secondary via-interactive-dark to-surface-black text-text-light"
     >
       <div class="w-full max-w-7xl mx-auto flex flex-col items-start">
-        <!-- Cabecera de la Sección (Fija) -->
+        <!-- Cabecera de la Sección -->
         <div class="w-full text-left mb-12">
           <span
             class="text-interactive-yellow font-heading uppercase tracking-widest text-sm sm:text-base font-semibold block mb-3"
@@ -970,113 +970,55 @@
           </h2>
         </div>
 
-        <!-- Párrafo introductorio (Fijo) -->
-        <div class="w-full text-left mb-16">
-          <p
-            class="font-body text-text-light text-base sm:text-lg 2xl:text-xl leading-relaxed"
+        <!-- Bloque Unificado con Isologotipo -->
+        <div
+          class="scroll-reveal w-full flex flex-col lg:flex-row gap-12 lg:gap-16 items-center transition-all duration-700 ease-out"
+        >
+          <!-- Columna Texto Institucional -->
+          <div class="flex flex-col text-left flex-grow order-2 lg:order-1">
+            <div
+              class="space-y-6 font-body text-text-light text-base sm:text-lg 2xl:text-xl leading-relaxed"
+            >
+              <p>
+                Combinamos más de 15 años de trayectoria en las aulas, la
+                gestión pública y el desarrollo tecnológico. Diseñamos e
+                implementamos propuestas formativas, guiones educativos
+                oficiales aprobados con puntaje docente y talleres de innovación
+                orientados a estudiantes de todos los niveles y modalidades del
+                sistema educativo.
+              </p>
+              <p>
+                Nuestro equipo reúne experiencia en coordinación de educación
+                digital, capacitación de formadores, docencia universitaria y
+                abordajes terapéuticos en educación especial. Integramos la
+                gestión de programas de conectividad con la formación en
+                programación, robótica, modelado 3D, producción audiovisual e
+                Inteligencia Artificial accesible, impulsando una incorporación
+                crítica de la tecnología aplicada al fortalecimiento de los
+                procesos de enseñanza.
+              </p>
+            </div>
+          </div>
+
+          <!-- Columna Asset Gráfico / Isologotipo (Oculto en Mobile, Card Violeta en Desktop) -->
+          <div
+            class="hidden sm:flex flex-shrink-0 mx-auto order-2 lg:order-2 items-center justify-center p-4"
           >
-            Combinamos más de una década de experiencia en las aulas con el
-            desarrollo técnico y la gestión pública. Diseñamos propuestas
-            formativas y guiones educativos oficiales aprobados con puntaje
-            docente en la Provincia, capacitando activamente a docentes y
-            formadores de formadores. Nuestra trayectoria abarca la
-            implementación de talleres tecnológicos dirigidos a estudiantes de
-            todos los niveles del sistema educativo y en todas sus modalidades.
-          </p>
-        </div>
-
-        <!-- Perfil 1: Mario De Paolo -->
-        <div
-          class="scroll-reveal w-full max-w-7xl flex flex-col md:flex-row gap-8 items-start mb-20 mx-auto transition-all duration-700 ease-out"
-        >
-          <!-- Columna Foto con Marco Fijo y Zoom Interno -->
-          <div class="flex-shrink-0 mx-auto md:mx-0">
+            <!-- Card Contenedora con Borde e Iluminación Glow Violeta -->
             <div
-              class="group relative rounded-[20px] p-[1px] bg-gradient-to-b from-[#754595] to-[#9b51e0] shadow-[0_0_40px_rgba(117,69,149,0.7)] hover:shadow-[0_0_50px_rgba(117,69,149,0.9)] active:scale-95 transition-all duration-300 overflow-hidden"
+              class="group relative rounded-[24px] p-[1.5px] bg-gradient-to-b from-[#9b51e0] to-[#754595] shadow-[0_0_30px_rgba(117,69,149,0.5)] hover:shadow-[0_0_45px_rgba(155,81,224,0.8)] transition-all duration-500 ease-out overflow-hidden flex items-center justify-center w-[240px] h-[240px] sm:w-[280px] sm:h-[280px]"
             >
-              <img
-                src="./src/assets/mario.png"
-                alt="Mario De Paolo"
-                class="photo-zoom w-[225px] h-[338px] rounded-[19px] object-cover transition-transform duration-1000 ease-out scale-110 group-hover:scale-105"
-              />
-            </div>
-          </div>
-
-          <!-- Columna Texto -->
-          <div class="flex flex-col text-left flex-grow">
-            <h3
-              class="font-heading text-2xl sm:text-3xl 2xl:text-4xl font-bold text-text-light mb-4 text-center md:text-left"
-            >
-              Mario De Paolo
-            </h3>
-
-            <div
-              class="space-y-4 font-body text-text-light text-base 2xl:text-lg leading-relaxed"
-            >
-              <p>
-                Coordina equipos de educación digital desde 2012, capacitando a
-                docentes y acompañando a las escuelas en la incorporación
-                crítica de tecnología y robótica a nivel regional.
-              </p>
-              <p>
-                Es docente en la UTN Mar del Plata en las áreas de estadística,
-                análisis de datos y arquitectura de sistemas, y forma parte del
-                equipo de formación continua de docentes en Ciencias de la
-                Computación.
-              </p>
-              <p>
-                Su trayectoria articula la gestión pública, la implementación de
-                programas nacionales de conectividad y una sólida base técnica
-                aplicada directamente al fortalecimiento de los procesos de
-                enseñanza.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Perfil 2: Marcos Labra -->
-        <div
-          class="scroll-reveal w-full max-w-7xl flex flex-col md:flex-row gap-8 items-start mx-auto transition-all duration-700 ease-out"
-        >
-          <!-- Columna Texto -->
-          <div class="flex flex-col text-left flex-grow order-2 md:order-1">
-            <h3
-              class="font-heading text-2xl sm:text-3xl 2xl:text-4xl font-bold text-text-light mb-4 text-center md:text-left"
-            >
-              Marcos Labra
-            </h3>
-
-            <div
-              class="space-y-4 font-body text-text-light text-base 2xl:text-lg leading-relaxed"
-            >
-              <p>
-                Con 15 años de trayectoria docente, se desempeña hace 9 como
-                facilitador digital capacitando a equipos docentes y liderando
-                talleres de desarrollo web, robótica y programación en proyectos
-                institucionales.
-              </p>
-              <p>
-                Cuenta con experiencia en la formación docente y ha sido tutor
-                internacional de programación, lógica y modelado 3D en
-                plataformas lúdicas avanzadas para estudiantes de toda
-                Latinoamérica. Su perfil combina la docencia en lenguajes
-                artísticos con la formación terapéutica en escuelas especiales,
-                impulsando actualmente proyectos que integran herramientas de
-                Inteligencia Artificial y producción audiovisual accesible.
-              </p>
-            </div>
-          </div>
-
-          <!-- Columna Foto con Marco Fijo y Zoom Interno -->
-          <div class="flex-shrink-0 mx-auto md:mx-0 order-1 md:order-2">
-            <div
-              class="group relative rounded-[20px] p-[1px] bg-gradient-to-b from-[#754595] to-[#9b51e0] shadow-[0_0_40px_rgba(117,69,149,0.7)] hover:shadow-[0_0_50px_rgba(117,69,149,0.9)] active:scale-95 transition-all duration-300 overflow-hidden"
-            >
-              <img
-                src="./src/assets/marcos.png"
-                alt="Marcos Labra"
-                class="photo-zoom w-[225px] h-[338px] rounded-[19px] object-cover transition-transform duration-1000 ease-out scale-110 group-hover:scale-105"
-              />
+              <!-- Relleno Interno Violeta -->
+              <div
+                class="w-full h-full rounded-[22.5px] bg-[#754595] flex items-center justify-center p-3 sm:p-4 transition-transform duration-500 group-hover:scale-[0.98]"
+              >
+                <!-- Logo SVG Blanco Agrandado -->
+                <img
+                  src="./src/assets/light-isologotipo-only-white.svg"
+                  alt="Isologotipo Pigmalión"
+                  class="w-[85%] h-[85%] object-contain transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </div>
             </div>
           </div>
         </div>
