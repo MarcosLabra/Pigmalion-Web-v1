@@ -10,7 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <title>Pigmalión</title>
-    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-C2dA6w0C.js"></script>
+    <script type="module" crossorigin src="/Pigmalion-Web-v1/assets/index-C9nS3JaM.js"></script>
     <link rel="stylesheet" crossorigin href="/Pigmalion-Web-v1/assets/index-B9TiFkDa.css">
   </head>
 
@@ -602,10 +602,12 @@
 
           <!-- Barra Sticky de Filtros -->
           <div
-            class="sticky top-[56px] lg:top-[68px] z-30 w-full bg-surface-secondary py-4 mb-8 transition-all duration-200 shadow-none -mt-[2px]"
+            class="sticky top-[56px] lg:top-[68px] z-30 w-full bg-surface-secondary py-3 mb-8 transition-all duration-200 shadow-none -mt-[2px]"
           >
-            <div class="w-full">
+            <div class="w-full flex flex-col items-center">
+              <!-- Scroll de botones de filtro -->
               <div
+                id="filters-container"
                 class="flex items-center gap-3 overflow-x-auto no-scrollbar scroll-smooth px-6 sm:px-12 md:px-16 lg:px-24 2xl:px-36 sm:justify-center w-full"
               >
                 <button
@@ -648,9 +650,18 @@
                   Superior
                 </button>
               </div>
+
+              <!-- Indicador de Flecha derecha sola en Mobile (sin titileo) -->
+              <div class="w-full px-6 flex justify-end mt-2 sm:hidden">
+                <div
+                  id="filters-scroll-hint"
+                  class="text-interactive-yellow text-lg pointer-events-none transition-opacity duration-300"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
             </div>
           </div>
-
           <!-- Contenedor Principal de Tarjetas y Carrusel -->
           <div class="w-full flex flex-col items-center">
             <div class="relative w-full mb-12">
