@@ -7,18 +7,18 @@ const menu = document.getElementById("mobile-menu");
 const links = document.querySelectorAll(".mobile-link");
 
 function toggleMenu() {
-  btn?.classList.toggle("is-active");
-  menu?.classList.toggle("mobile-menu-closed");
-  menu?.classList.toggle("mobile-menu-open");
+  btn.classList.toggle("is-active");
+  menu.classList.toggle("mobile-menu-closed");
+  menu.classList.toggle("mobile-menu-open");
 }
 
 btn?.addEventListener("click", toggleMenu);
 
 links.forEach((link) => {
   link.addEventListener("click", () => {
-    btn?.classList.remove("is-active");
-    menu?.classList.add("mobile-menu-closed");
-    menu?.classList.remove("mobile-menu-open");
+    btn.classList.remove("is-active");
+    menu.classList.add("mobile-menu-closed");
+    menu.classList.remove("mobile-menu-open");
   });
 });
 
@@ -48,7 +48,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// 3. Animación de revelado progresivo + Zoom interno en fotos
+// 6. Animación de revelado progresivo + Zoom interno en fotos
 function initScrollReveal() {
   const revealElements = document.querySelectorAll(".scroll-reveal");
   if (!revealElements.length) return;
@@ -65,6 +65,7 @@ function initScrollReveal() {
             entry.target.classList.remove("opacity-0", "translate-y-8");
             entry.target.classList.add("opacity-100", "translate-y-0");
 
+            // Si el contenedor tiene una foto interna con .photo-zoom, activa la escala normal
             const photo = entry.target.querySelector(".photo-zoom");
             if (photo) {
               photo.classList.remove("scale-110");
@@ -87,7 +88,7 @@ function initScrollReveal() {
 
 initScrollReveal();
 
-// 4. Renderizado Dinámico de Propuestas Formativas (con distribución Flex de altura uniforme)
+// 4. Renderizado Dinámico de Propuestas Formativas
 function renderCards(data) {
   const container = document.getElementById("cards-container");
   if (!container) return;
@@ -97,7 +98,7 @@ function renderCards(data) {
   data.forEach((item) => {
     const card = document.createElement("div");
     card.className =
-      "proposal-card w-full h-full flex flex-col justify-between bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 2xl:p-12 shadow-2xl transition-all duration-300 ease-out active:scale-[0.99] opacity-100 scale-100";
+      "proposal-card w-full bg-surface-background text-text-primary rounded-[24px] p-8 sm:p-10 2xl:p-12 shadow-2xl transition-all duration-300";
     card.setAttribute("data-audience", item.audience.join(" "));
     card.setAttribute("data-level", item.level.join(" "));
 
@@ -122,26 +123,24 @@ function renderCards(data) {
       .join("");
 
     card.innerHTML = `
-      <div class="flex-grow flex flex-col items-start">
-        <div class="flex flex-wrap gap-2 mb-6">
-          ${badgesHTML}
-        </div>
-
-        <h3 class="font-heading text-2xl sm:text-3xl font-bold text-center w-full mb-6 text-surface-black">
-          ${item.title}
-        </h3>
-
-        <p class="font-body text-text-secondary text-base mb-6 leading-relaxed">
-          ${item.description}
-        </p>
-
-        <ul class="list-disc list-inside space-y-2 text-text-secondary text-sm sm:text-base mb-8">
-          ${listHTML}
-        </ul>
+      <div class="flex flex-wrap gap-2 mb-6">
+        ${badgesHTML}
       </div>
 
-      <div class="border-t border-text-secondary/20 pt-6 space-y-2 text-sm sm:text-base text-text-secondary mt-auto w-full">
-        <p><strong>Duración:</strong> ${item.details.duration}</p>
+      <h3 class="font-heading text-2xl sm:text-3xl font-bold text-center mb-6 text-surface-black">
+        ${item.title}
+      </h3>
+
+      <p class="font-body text-text-secondary text-base mb-6 leading-relaxed">
+        ${item.description}
+      </p>
+
+      <ul class="list-disc list-inside space-y-2 text-text-secondary text-sm sm:text-base mb-8">
+        ${listHTML}
+      </ul>
+
+      <div class="border-t border-text-secondary/20 pt-6 space-y-2 text-sm sm:text-base text-text-secondary">
+        <p><strong>Duracion:</strong> ${item.details.duration}</p>
         <p><strong>Modalidad:</strong> ${item.details.modality}</p>
         <p><strong>Entregable:</strong> ${item.details.deliverable}</p>
       </div>
@@ -154,7 +153,7 @@ function renderCards(data) {
 // Renderizar tarjetas de inmediato
 renderCards(propuestasData);
 
-// 5. Lógica de Filtrado Multi-selección con animación rápida y mínimo 1 activo
+// 5. Lógica de Filtrado Multi-selección con validación de mínimo 1 activo
 const audienceButtons = document.querySelectorAll(".filter-btn-audience");
 const levelButtons = document.querySelectorAll(".filter-btn-level");
 
@@ -177,21 +176,11 @@ function filterCards() {
     const matchesLevel = cardLevels.some((l) => activeLevels.includes(l));
 
     if (matchesAudience && matchesLevel) {
-      if (card.style.display === "none") {
-        card.style.display = "flex";
-        requestAnimationFrame(() => {
-          card.classList.remove("opacity-0", "scale-95");
-          card.classList.add("opacity-100", "scale-100");
-        });
-      }
+      card.style.display = "block";
+      setTimeout(() => (card.style.opacity = "1"), 10);
     } else {
-      card.classList.remove("opacity-100", "scale-100");
-      card.classList.add("opacity-0", "scale-95");
-      setTimeout(() => {
-        if (card.classList.contains("opacity-0")) {
-          card.style.display = "none";
-        }
-      }, 200);
+      card.style.opacity = "0";
+      setTimeout(() => (card.style.display = "none"), 300);
     }
   });
 }
