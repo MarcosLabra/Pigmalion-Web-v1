@@ -38,7 +38,7 @@ content = content.replace(
 const heroRegex = /<p\s+class="text-text-light\/10 font-body text-xs md:text-sm leading-loose tracking-widest text-left w-full h-full text-pretty break-words pl-2"\s*>[\s\S]*?<\/p>/;
 content = content.replace(
   heroRegex,
-  '<p id="hero-background-text" class="text-text-light/10 font-body text-xs md:text-sm leading-loose tracking-widest text-left w-full h-full text-pretty break-words pl-2"></p>'
+  '<p id="hero-background-text" class="text-text-light/10 font-body text-xs md:text-sm leading-loose tracking-widest text-left w-full h-full text-pretty wrap-break-words pl-2"></p>'
 );
 
 fs.writeFileSync(filePath, content, 'utf8');
