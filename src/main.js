@@ -1,3 +1,5 @@
+import "@fontsource-variable/eb-garamond";
+import "@fontsource-variable/plus-jakarta-sans";
 import "./style.css";
 import { initMenu } from "./modules/menu.js";
 import { initAnimations } from "./modules/animations.js";

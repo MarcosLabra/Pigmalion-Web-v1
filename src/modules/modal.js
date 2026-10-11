@@ -70,6 +70,7 @@ export function initModal() {
       ?.addEventListener("click", window.closeModalFunc);
 
     modal.classList.remove("hidden");
+    modal.classList.add("flex");
     setTimeout(() => {
       modal.classList.remove("opacity-0");
       // Mover el foco al modal (accesibilidad)
@@ -82,6 +83,7 @@ export function initModal() {
     if (!modal) return;
     modal.classList.add("opacity-0");
     setTimeout(() => {
+      modal.classList.remove("flex");
       modal.classList.add("hidden");
       document.body.style.overflow = "";
       if (previouslyFocusedElement) {
